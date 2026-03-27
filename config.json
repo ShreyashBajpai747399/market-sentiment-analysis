@@ -1,0 +1,63 @@
+{
+  "project": {
+    "name": "Financial Sentiment Pipeline",
+    "version": "1.0.0",
+    "author": "Your Name",
+    "description": "Automated ETL pipeline for stock price and news sentiment analysis"
+  },
+
+  "stocks": {
+    "symbols": ["AAPL", "GOOGL", "MSFT", "TSLA", "AMZN"],
+    "start_date": "2024-01-01",
+    "end_date":   "2024-12-31",
+    "interval":   "1d"
+  },
+
+  "news": {
+    "rss_base_url": "https://feeds.finance.yahoo.com/rss/2.0/headline",
+    "rss_params":   "region=US&lang=en-US",
+    "max_articles_per_symbol": 50,
+    "request_delay_seconds":   2
+  },
+
+  "paths": {
+    "raw_stock":       "data/raw/stock/",
+    "raw_news":        "data/raw/news/",
+    "processed_stock": "data/processed/stock/",
+    "processed_news":  "data/processed/news/",
+    "sentiment":       "data/sentiment/",
+    "features":        "data/features/",
+    "logs":            "logs/"
+  },
+
+  "database": {
+    "host":     "localhost",
+    "port":     3306,
+    "name":     "financial_sentiment_db",
+    "user":     "root",
+    "password": "your_mysql_password_here",
+    "charset":  "utf8mb4"
+  },
+
+  "sentiment": {
+    "engine":           "vader",
+    "positive_threshold": 0.05,
+    "negative_threshold": -0.05
+  },
+
+  "logging": {
+    "level":            "INFO",
+    "format":           "%(asctime)s | %(levelname)s | %(module)s | %(message)s",
+    "date_format":      "%Y-%m-%d %H:%M:%S",
+    "log_filename":     "pipeline.log"
+  },
+
+  "pipeline": {
+    "run_ingestion":    true,
+    "run_validation":   true,
+    "run_cleaning":     true,
+    "run_sentiment":    true,
+    "run_features":     true,
+    "run_db_load":      true
+  }
+}
