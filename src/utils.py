@@ -51,9 +51,10 @@ def setup_logger(logger_name,log_dir,log_filename):
     return logger
 
 
-
-
-
+def ensure_dirs(base_dir, paths_config):
+     for key,relative_path in paths_config.items():
+        full_path=os.path.join(base_dir,relative_path) 
+        os.makedirs(full_path,if_exists=True)
 
 
 
