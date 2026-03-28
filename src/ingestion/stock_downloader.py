@@ -10,10 +10,12 @@ def download_stock(symbol,start_date,end_date,interval,logger):
     logger.info(f'starting download for {symbol}')
 
     try:
-        df=yf.download(ticker=symbol,
+        df=yf.download(tickers=symbol,
                        start=start_date,
                        end=end_date,
-                       interval=interval)
+                       interval=interval,
+                       progress=False,
+                       auto_adjust=True)
         
         if df.empty:
             logger.error(f'no data returned for {symbol}'
@@ -38,7 +40,7 @@ def download_stock(symbol,start_date,end_date,interval,logger):
         
         min_expected=50
         if len(df)<min_expected:
-            logger.warning(f'{symbol} returned only {len(df)} rows \n expected least were {min_expected}')
+            logger.warning(f'{symbol} returned only {len(df)} rows , expected least were {min_expected}')
 
         else:
             logger.info(f'downloaded {len(df)} rows for {symbol}')
@@ -47,23 +49,28 @@ def download_stock(symbol,start_date,end_date,interval,logger):
         #here we are forcing the columns to be in a specific order
         desired=["Symbol", "Date", "Open", "High", "Low", "Close", "Volume"]
         df=df[[c for c in desired if c in df.columns]]
+        
+        return df
 
     except ConnectionError as e:
         logger.error(
-            f'Network error while downloading {symbol} : {e}'
+            f'Network error while downloading {symbol} : {e}. '
             f'Check your internet connection'
         )
+        return None
         
     except ValueError as e:
         logger.error(
             f"data parsing error for {symbol} : {e}"
         )
+        return None
 
     except Exception as e :
         logger.error(
-            f'Unexpected error downloading'
+            f'Unexpected error downloading. '
             f'{type(e).__name__} : {e}'
         )
+        return None
 
 
 def save_stock(df,symbol,raw_stock_path,logger):
@@ -73,7 +80,7 @@ def save_stock(df,symbol,raw_stock_path,logger):
     try:
         df.to_csv(full_path,index=False)
         logger.info(
-            f'saved {len(df)} rows to {full_path}'
+            f'{symbol} - Saved {len(df)} rows to {full_path}'
         )
         return full_path
 
@@ -83,8 +90,51 @@ def save_stock(df,symbol,raw_stock_path,logger):
         return None
 
     except Exception as e :
-        logger.error(f'failed to save {symbol} data {type(e).__name__}: {e}')
+        logger.error(f'failed to save {symbol} data : {type(e).__name__}: {e}')
         return None
 
 def main():
-    config,base_dir=
+    config,base_dir=load_config()
+    log_dir=os.path.join(base_dir,config["paths"]["logs"])
+    raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
+    logger=setup_logger(__name__,log_dir,config["logging"]["log_filename"])
+    
+    logger.info("=" * 60)
+    logger.info("STOCK DOWNLOADER — starting")
+    logger.info("=" * 60)
+
+    symbols=config["stocks"]["symbols"]
+    start_date=config["stocks"]["start_date"]
+    end_date=config["stocks"]["end_date"]
+    interval=config["stocks"]["interval"]
+    
+    successful,failed=[],[]
+
+    for symbol in symbols:
+        df=download_stock(symbol=symbol,start_date=start_date,end_date=end_date,interval=interval,logger=logger )
+
+        if df is not None:
+            saved=save_stock(df,symbol,raw_stock_path,logger)
+            if saved :
+                successful.append(symbol)
+            else:
+                failed.append(symbol)
+        else :
+            failed.append(symbol)
+    logger.info('='*60)
+
+    if len(failed)==0:
+        logger.info(f'COMPLETE - all {len(successful)} downloads completed successfully')
+    elif len(successful) == 0 :
+        logger.critical(f'COMPLETE - all downloads failed : {symbols}. '
+                    f'No data was saved , check internet connection adnd config. ')
+    else :
+        logger.warning(
+            f'COMPLETED - {len(successful)} downloads successful : ({successful}) | '
+            f'- {len(failed)} downloads failed ({failed}) '
+        )
+
+    logger.info("=" * 60)
+
+if __name__=="__main__":
+    main()
