@@ -1,4 +1,4 @@
-# Automated Financial Sentiment Data Pipeline & Analytics System
+# A CORRELATIVE ANALYSIS OF PUBLIC SENTIMENT AND MARKET PERFORMANCE 
 
 ## Project Overview
 
