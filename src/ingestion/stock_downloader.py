@@ -73,7 +73,7 @@ def download_stock(symbol,start_date,end_date,interval,logger):
         return None
 
 
-def save_stock(df,symbol,raw_stock_path,logger):
+def save_stock_data(df,symbol,raw_stock_path,logger):
     os.makedirs(raw_stock_path,exist_ok=True)
     full_path=os.path.join(raw_stock_path,f'{symbol}_raw.csv')
 
@@ -114,7 +114,7 @@ def main():
         df=download_stock(symbol=symbol,start_date=start_date,end_date=end_date,interval=interval,logger=logger )
 
         if df is not None:
-            saved=save_stock(df,symbol,raw_stock_path,logger)
+            saved=save_stock_data(df,symbol,raw_stock_path,logger)
             if saved :
                 successful.append(symbol)
             else:

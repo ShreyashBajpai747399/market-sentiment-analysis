@@ -4,11 +4,11 @@ import pandas as pd
 import os
 import sys
 import time
+import csv
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import load_config, setup_logger
 
-config , base_dir= load_config()
 
 def build_rss_url(symbol,config):
     base_url=config["news"]["rss_base_url"]
@@ -36,8 +36,8 @@ def fetch_rss_feed(url,symbol,logger):
             logger.info(f"RSS feed fetched successfully for {symbol}")
             return response.text
         elif response.status_code==429:
-            logger.error(f'rate limited by Yahoo for {symbol}'
-                         f'try increasing the timeout')
+            logger.warning(f'rate limited by Yahoo for {symbol}'
+                         f'try increasing the delay')
             return None
         else :
             logger.error(
@@ -72,7 +72,7 @@ def parse_rss_feed(xml_feed,logger,symbol,max_articles):
         if not items:
             logger.warning(f'no <item> tags found for {symbol}'
                            f'feed structure might have change')
-        
+            return [] 
         logger.info(f'found {len(items)} articles for {symbol}')
 
         articles=[]
@@ -88,7 +88,7 @@ def parse_rss_feed(xml_feed,logger,symbol,max_articles):
             link=item.find("link")
             link=link.get_text(strip=True) if link else None
 
-            pub_date=item.find("date")
+            pub_date=item.find("pubDate")
             pub_date=pub_date.get_text(strip=True) if pub_date else None
 
             if not title :
@@ -150,7 +150,7 @@ def save_news_data(articles,raw_news_path,symbol,logger):
     file_path=os.path.join(raw_news_path,file_name)
 
     try:
-        df.to_csv(file_path,index=False,encoding='utf-8')
+        df.to_csv(file_path,index=False,encoding='utf-8',quoting=csv.QUOTE_ALL)
         logger.info(f'saved {len(df)} articles to {raw_news_path} SUCCESSFULLY')
         return True
     
@@ -221,7 +221,7 @@ def main():
         
     if len(failed)==0:
         logger.info(
-            f'COMPLETE — ALL {len(failed)} SYMBOLS SCRAPED SUCCESSFULLY'
+            f'COMPLETE — ALL {len(successful)} SYMBOLS SCRAPED SUCCESSFULLY'
         )        
         
     elif len(successful)==0:
