@@ -1,0 +1,21 @@
+2026-03-29 15:27:49 | INFO | stock_downloader | ============================================================
+2026-03-29 15:27:49 | INFO | stock_downloader | STOCK DOWNLOADER — starting
+2026-03-29 15:27:49 | INFO | stock_downloader | ============================================================
+2026-03-29 15:27:49 | INFO | stock_downloader | starting download for AAPL
+2026-03-29 15:27:55 | INFO | stock_downloader | downloaded 251 rows for AAPL
+2026-03-29 15:27:55 | INFO | stock_downloader | AAPL - Saved 251 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-03-29 15:27:55 | INFO | stock_downloader | starting download for GOOGL
+2026-03-29 15:27:56 | INFO | stock_downloader | downloaded 251 rows for GOOGL
+2026-03-29 15:27:56 | INFO | stock_downloader | GOOGL - Saved 251 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/GOOGL_raw.csv
+2026-03-29 15:27:56 | INFO | stock_downloader | starting download for MSFT
+2026-03-29 15:27:56 | INFO | stock_downloader | downloaded 251 rows for MSFT
+2026-03-29 15:27:56 | INFO | stock_downloader | MSFT - Saved 251 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/MSFT_raw.csv
+2026-03-29 15:27:56 | INFO | stock_downloader | starting download for TSLA
+2026-03-29 15:27:57 | INFO | stock_downloader | downloaded 251 rows for TSLA
+2026-03-29 15:27:57 | INFO | stock_downloader | TSLA - Saved 251 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/TSLA_raw.csv
+2026-03-29 15:27:57 | INFO | stock_downloader | starting download for AMZN
+2026-03-29 15:27:58 | INFO | stock_downloader | downloaded 251 rows for AMZN
+2026-03-29 15:27:58 | INFO | stock_downloader | AMZN - Saved 251 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AMZN_raw.csv
+2026-03-29 15:27:58 | INFO | stock_downloader | ============================================================
+2026-03-29 15:27:58 | INFO | stock_downloader | COMPLETE - all 5 downloads completed successfully
+2026-03-29 15:27:58 | INFO | stock_downloader | ============================================================
