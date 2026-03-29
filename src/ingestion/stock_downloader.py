@@ -48,7 +48,7 @@ def download_stock(symbol,start_date,end_date,interval,logger):
 
         #here we are forcing the columns to be in a specific order
         desired=["Symbol", "Date", "Open", "High", "Low", "Close", "Volume"]
-        df=df[[c for c in desired if c in df.columns]]
+        df.reindex(columns=desired)
         
         return df
 
@@ -76,22 +76,28 @@ def download_stock(symbol,start_date,end_date,interval,logger):
 def save_stock_data(df,symbol,raw_stock_path,logger):
     os.makedirs(raw_stock_path,exist_ok=True)
     full_path=os.path.join(raw_stock_path,f'{symbol}_raw.csv')
-
-    try:
-        df.to_csv(full_path,index=False)
-        logger.info(
-            f'{symbol} - Saved {len(df)} rows to {full_path}'
+    
+    if df is None or df.empty:
+        logger.warning(
+            f'No data to save for {symbol}'
         )
-        return full_path
-
-    except PermissionError as e:
-        logger.error(f"Cannot write {full_path} — file is open in another program. "
-            f"Close it and retry.")
         return None
+    else:
+        try:
+            df.to_csv(full_path,index=False)
+            logger.info(
+                f'{symbol} - Saved {len(df)} rows to {full_path}'
+            )
+            return full_path
 
-    except Exception as e :
-        logger.error(f'failed to save {symbol} data : {type(e).__name__}: {e}')
-        return None
+        except PermissionError as e:
+            logger.error(f"Cannot write {full_path} — file is open in another program. "
+                f"Close it and retry.")
+            return None
+
+        except Exception as e :
+            logger.error(f'failed to save {symbol} data : {type(e).__name__}: {e}')
+            return None
 
 def main():
     config,base_dir=load_config()

@@ -199,11 +199,7 @@ def main():
         if not articles:
             failed.append(symbol)
             continue
-
-        """not articles: checks if the article is an empty list 
-        whereas xml_text is None: checks if it is "None" 
-        if an empty string was passed , it would returned false"""
-
+        
         saved=save_news_data(articles,raw_news_path,symbol,logger)
 
         if saved:
