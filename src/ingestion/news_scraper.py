@@ -67,7 +67,7 @@ def fetch_rss_feed(url,symbol,logger):
 def parse_rss_feed(xml_feed,logger,symbol,max_articles):
     try:    
         soup=BeautifulSoup(xml_feed,"lxml-xml")
-        items=soup.find_all("items")
+        items=soup.find_all("item")
 
         if not items:
             logger.warning(f'no <item> tags found for {symbol}'
@@ -146,13 +146,13 @@ def save_news_data(articles,raw_news_path,symbol,logger):
     os.makedirs(raw_news_path,exist_ok=True)
 
     df=pd.DataFrame(articles)
-    file_name=f'{symbol}_news_raw.csv '
+    file_name=f'{symbol}_news_raw.csv'
     file_path=os.path.join(raw_news_path,file_name)
 
     try:
-        df.to_csv(df,index=False,encoding='utf-8')
+        df.to_csv(file_path,index=False,encoding='utf-8')
         logger.info(f'saved {len(df)} articles to {raw_news_path} SUCCESSFULLY')
-        return None
+        return True
     
     except PermissionError as e :
         logger.error(
@@ -167,4 +167,78 @@ def save_news_data(articles,raw_news_path,symbol,logger):
         )
         return None
 
+def main():
+    config,base_dir=load_config()
+    log_dir=os.path.join(base_dir,config["paths"]["logs"])
+    log_file_name=config["logging"]["log_filename"]
+    raw_news_path=os.path.join(base_dir,config["paths"]["raw_news"])
 
+    logger=setup_logger(__name__,log_dir=log_dir,log_filename=log_file_name)
+
+    logger.info("="*60)
+    logger.info(f'NEWS SCRAPER - STARTING')
+    logger.info("="*60)
+
+    symbols=config["stock"]["symbol"]
+    max_articles=config["news"]["max_articles_per_symbol"]
+    delay=config["news"]["request_delay_seconds"]
+
+    successful,failed=[],[]
+
+    for symbol in symbols:
+        logger.info(f"── Processing {symbol} ──")
+        url=build_rss_url(symbol,config)
+        xml_text=fetch_rss_feed(url,symbol,logger)
+
+        if xml_text is None:
+            failed.append(symbol)
+            continue
+
+        articles=parse_rss_feed(xml_text,logger,symbol,max_articles)
+
+        if not articles:
+            failed.append(symbol)
+            continue
+
+        """not articles: checks if the article is an empty list 
+        whereas xml_text is None: checks if it is "None" 
+        if an empty string was passed , it would returned false"""
+
+        saved=save_news_data(articles,raw_news_path,symbol,logger)
+
+        if saved:
+            successful.append(symbol)
+        else:
+            failed.append(symbol)
+        
+        if symbol!=symbols[-1]:
+            logger.info(
+                f'waiting {delay}s before next request..'
+            )
+            time.sleep(delay)
+
+    logger.info("="*60)
+        
+    if len(failed)==0:
+        logger.info(
+            f'COMPLETE — ALL {len(failed)} SYMBOLS SCRAPED SUCCESSFULLY'
+        )        
+        
+    elif len(successful)==0:
+            logger.critical(
+            f'FAILED — FAILED TO SCRAPE ALL {len(failed)}'
+            f'check internet or feed URL'
+        )  
+             
+    else:
+        logger.warning(
+            f'FAILED TO SCRAPE {len(failed)} ARTICLLES : {failed}'
+            f'{len(successful)} ARTICLES WERE SCRAPED SUCCESSFULLY : {successful}'
+        )
+
+    logger.info("="*60)
+
+    if __name__=="__main__":
+        main()
+
+    
