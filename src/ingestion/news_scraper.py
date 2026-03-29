@@ -179,7 +179,7 @@ def main():
     logger.info(f'NEWS SCRAPER - STARTING')
     logger.info("="*60)
 
-    symbols=config["stock"]["symbol"]
+    symbols=config["stocks"]["symbols"]
     max_articles=config["news"]["max_articles_per_symbol"]
     delay=config["news"]["request_delay_seconds"]
 
@@ -238,7 +238,7 @@ def main():
 
     logger.info("="*60)
 
-    if __name__=="__main__":
-        main()
+if __name__=="__main__":
+    main()
 
     

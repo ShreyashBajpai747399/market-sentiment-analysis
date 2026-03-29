@@ -19,3 +19,43 @@
 2026-03-29 15:27:58 | INFO | stock_downloader | ============================================================
 2026-03-29 15:27:58 | INFO | stock_downloader | COMPLETE - all 5 downloads completed successfully
 2026-03-29 15:27:58 | INFO | stock_downloader | ============================================================
+2026-03-29 23:18:49 | INFO | news_scraper | ============================================================
+2026-03-29 23:18:49 | INFO | news_scraper | NEWS SCRAPER - STARTING
+2026-03-29 23:18:49 | INFO | news_scraper | ============================================================
+2026-03-29 23:18:49 | INFO | news_scraper | ── Processing AAPL ──
+2026-03-29 23:18:49 | INFO | news_scraper | Fetching RSS feed for AAPL — https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US
+2026-03-29 23:18:50 | INFO | news_scraper | RSS feed fetched successfully for AAPL
+2026-03-29 23:18:50 | INFO | news_scraper | found 20 articles for AAPL
+2026-03-29 23:18:50 | INFO | news_scraper | successfully parsed 20 for AAPL
+2026-03-29 23:18:50 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-03-29 23:18:50 | INFO | news_scraper | waiting 2s before next request..
+2026-03-29 23:18:52 | INFO | news_scraper | ── Processing GOOGL ──
+2026-03-29 23:18:52 | INFO | news_scraper | Fetching RSS feed for GOOGL — https://feeds.finance.yahoo.com/rss/2.0/headline?s=GOOGL&region=US&lang=en-US
+2026-03-29 23:18:53 | INFO | news_scraper | RSS feed fetched successfully for GOOGL
+2026-03-29 23:18:53 | INFO | news_scraper | found 20 articles for GOOGL
+2026-03-29 23:18:53 | INFO | news_scraper | successfully parsed 20 for GOOGL
+2026-03-29 23:18:53 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-03-29 23:18:53 | INFO | news_scraper | waiting 2s before next request..
+2026-03-29 23:18:55 | INFO | news_scraper | ── Processing MSFT ──
+2026-03-29 23:18:55 | INFO | news_scraper | Fetching RSS feed for MSFT — https://feeds.finance.yahoo.com/rss/2.0/headline?s=MSFT&region=US&lang=en-US
+2026-03-29 23:18:55 | INFO | news_scraper | RSS feed fetched successfully for MSFT
+2026-03-29 23:18:55 | INFO | news_scraper | found 20 articles for MSFT
+2026-03-29 23:18:55 | INFO | news_scraper | successfully parsed 20 for MSFT
+2026-03-29 23:18:55 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-03-29 23:18:55 | INFO | news_scraper | waiting 2s before next request..
+2026-03-29 23:18:57 | INFO | news_scraper | ── Processing TSLA ──
+2026-03-29 23:18:57 | INFO | news_scraper | Fetching RSS feed for TSLA — https://feeds.finance.yahoo.com/rss/2.0/headline?s=TSLA&region=US&lang=en-US
+2026-03-29 23:18:58 | INFO | news_scraper | RSS feed fetched successfully for TSLA
+2026-03-29 23:18:58 | INFO | news_scraper | found 20 articles for TSLA
+2026-03-29 23:18:58 | INFO | news_scraper | successfully parsed 20 for TSLA
+2026-03-29 23:18:58 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-03-29 23:18:58 | INFO | news_scraper | waiting 2s before next request..
+2026-03-29 23:19:00 | INFO | news_scraper | ── Processing AMZN ──
+2026-03-29 23:19:00 | INFO | news_scraper | Fetching RSS feed for AMZN — https://feeds.finance.yahoo.com/rss/2.0/headline?s=AMZN&region=US&lang=en-US
+2026-03-29 23:19:00 | INFO | news_scraper | RSS feed fetched successfully for AMZN
+2026-03-29 23:19:00 | INFO | news_scraper | found 20 articles for AMZN
+2026-03-29 23:19:00 | INFO | news_scraper | successfully parsed 20 for AMZN
+2026-03-29 23:19:00 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-03-29 23:19:00 | INFO | news_scraper | ============================================================
+2026-03-29 23:19:00 | INFO | news_scraper | COMPLETE — ALL 0 SYMBOLS SCRAPED SUCCESSFULLY
+2026-03-29 23:19:00 | INFO | news_scraper | ============================================================
