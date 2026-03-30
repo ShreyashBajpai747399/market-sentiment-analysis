@@ -158,7 +158,7 @@ def check_row_count(df,symbol,min_rows,logger,data_type):
 def check_date_format(df,date_col,data_type,symbol,logger):
     if date_col not in df:
         logger.warning(
-            f'{data_type}{symbol} date column {date_col} not found'
+            f'[{data_type}] [{symbol}] date column {date_col} not found '
             f'skipping date format check'
         )
         return True
@@ -178,7 +178,7 @@ def check_date_format(df,date_col,data_type,symbol,logger):
         f'row count check complete - all dates are in YYYY-mm-dd format    '
     )
     return True
-def validate_stock_file(symbol,raw_stock_path,logger):
+def validate_stock_file(symbol,raw_stock_path,logger,config):
     
     file_path=os.path.join(raw_stock_path,f'{symbol}_raw.csv')
     
@@ -199,7 +199,7 @@ def validate_stock_file(symbol,raw_stock_path,logger):
         "nulls":check_null_values(df,symbol,critical_nulls,"stock",logger),
         "duplicates":check_duplicates(df,["Symbol","Date"],symbol,"stock",logger),
         "ranges":check_stock_price_range(df,symbol,logger,"stock"),
-        "rows":check_row_count(df,symbol,min_rows=50,logger=logger,data_type="stock"),
+        "rows":check_row_count(df,symbol,min_rows=config["validation"]["min_rows"]["stock"],logger=logger,data_type="stock"),
         "dates":check_date_format(df,"Date","stock",symbol,logger)
     }
 
@@ -219,8 +219,8 @@ def validate_stock_file(symbol,raw_stock_path,logger):
         )
     return passed
         
-def validate_news_file(symbol,raw_news_path,logger):
-    file_path=os.path.join(raw_news_path,f"{symbol}news_raw.csv")
+def validate_news_file(symbol,raw_news_path,logger,config):
+    file_path=os.path.join(raw_news_path,f"{symbol}_news_raw.csv")
     logger.info(
         f'starting news validation checks for {symbol}'
     )
@@ -236,9 +236,9 @@ def validate_news_file(symbol,raw_news_path,logger):
     results={
          "columns":check_required_columns(df,required_columns,symbol,"news",logger),
         "nulls":check_null_values(df,symbol,critical_nulls,"news",logger),
-        "duplicates":check_duplicates(df,["Symbol","Date"],symbol,"news",logger),
-        "rows":check_row_count(df,symbol,min_rows=50,logger=logger,data_type="news"),
-        "dates":check_date_format(df,"Date","news",symbol,logger)
+        "duplicates":check_duplicates(df,["symbol","date","title"],symbol,"news",logger),
+        "rows":check_row_count(df,symbol,min_rows=config["validation"]["min_rows"]["news"],logger=logger,data_type="news"),
+        "dates":check_date_format(df,"date","news",symbol,logger)
     }
     passed=all(results.values())
 
@@ -275,12 +275,12 @@ def main():
         logger.info(
             f'VALIDATING - {symbol}'
         )
-        if validate_stock_file(symbol,raw_stock_path,logger):
+        if validate_stock_file(symbol,raw_stock_path,logger,config):
             stock_passed.append(symbol)
         else :
             stock_failed.append(symbol)
 
-        if validate_news_file(symbol,raw_news_path,logger):
+        if validate_news_file(symbol,raw_news_path,logger,config):
             news_passed.append(symbol)
         else :
             news_failed.append(symbol)
