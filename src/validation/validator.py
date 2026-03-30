@@ -62,8 +62,8 @@ def check_null_values(df,symbol,critical_nulls,data_type,logger):
                 failed=True
             else:
                 logger.warning(
-                     f'{symbol}{data_type} : column {col} has {null_count} NULLS'
-                    f'{pct:.1f}% of rows '
+                    f"[{data_type}][{symbol}] Column '{col}' has {null_count} NULLs "
+                    f"({pct:.1f}% of rows) — exceeds 10% threshold"
                 )
         else :
             logger.info(
@@ -78,7 +78,7 @@ def check_duplicates(df,subset_cols,symbol,data_type,logger):
     duplicate_count=df.duplicated(subset=existing_cols).sum()
 
     if duplicate_count>0:
-        logger.warning(
+        logger.error(
             f'{duplicate_count} duplicates found for {data_type}{symbol}'
         )
         return False
@@ -95,13 +95,13 @@ def check_stock_price_range(df,symbol,logger,data_type):
         if col not in df.columns:
             continue
 
-        invalid=df[df[col]<0]
+        invalid=df[df[col]<=0]
 
         if len(invalid)>0:
             logger.warning(
                f"[stock][{symbol}] Column '{col}' has "
                 f"{len(invalid)} rows with price <= 0. "
-                f"Dates affected: {invalid['Date'].tolist()[:5]}"
+                f"Dates affected: {invalid['Date'].tolist()[:5] if "Date" in invalid.columns else []}"
             )
             failed=True
         
@@ -116,7 +116,7 @@ def check_stock_price_range(df,symbol,logger,data_type):
             logger.warning(
                 f"[stock][{symbol}] {len(invalid_hl)} rows where "
                 f"High < Low — data is corrupt. "
-                f"Dates: {invalid_hl['Date'].tolist()[:5]}"
+                f"Dates: {invalid_hl['Date'].tolist()[:5] if "Date" in invalid.columns else []}"
             )
             failed=True
         else:
@@ -130,7 +130,7 @@ def check_stock_price_range(df,symbol,logger,data_type):
         if len(invalid_vol) > 0:
             logger.warning(
                 f"[stock][{symbol}] {len(invalid_vol)} rows with negative Volume "
-                f"Dates: {invalid_vol['Date'].tolist()[:5]}"
+                f"Dates: {invalid_vol['Date'].tolist()[:5] if "Date" in invalid.columns else []}"
             )
             failed=True
         else:
@@ -150,8 +150,7 @@ def check_row_count(df,symbol,min_rows,logger,data_type):
         return False
     else:
         logger.info(
-            f'{symbol} {data_type} row count : {len(df)}'
-            f'minimum rows:{min_rows}'
+            f"[{data_type}][{symbol}] Row count: {len(df)} | Minimum required: {min_rows}"
         )
         return True
 
@@ -187,7 +186,7 @@ def validate_stock_file(symbol,raw_stock_path,logger,config):
     df=load_csv(file_path,logger)
 
     if df is None:
-        return None
+        return False
     
     required_columns=["Symbol", "Date", "Open", "High",
                       "Low", "Close", "Volume"]
@@ -305,7 +304,7 @@ def main():
         )
     else:
         logger.warning(
-            f"{total_failed} file(s) failed validation"
+            f"{total_failed} file(s) failed validation. "
             f"Review errors above before running cleaning step."
         )
 
