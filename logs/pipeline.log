@@ -200,3 +200,230 @@
 2026-03-29 23:40:29 | INFO | news_scraper | ============================================================
 2026-03-29 23:40:29 | INFO | news_scraper | COMPLETE — ALL 0 SYMBOLS SCRAPED SUCCESSFULLY
 2026-03-29 23:40:29 | INFO | news_scraper | ============================================================
+2026-03-31 01:13:50 | INFO | validator | ============================================================
+2026-03-31 01:13:50 | INFO | validator | VALIDATOR — starting
+2026-03-31 01:13:50 | INFO | validator | ============================================================
+2026-03-31 01:13:50 | INFO | validator | VALIDATING - AAPL
+2026-03-31 01:13:50 | INFO | validator | starting stock validation checks for AAPL
+2026-03-31 01:13:50 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-03-31 01:13:50 | INFO | validator | check complete for AAPL-stock : ALL COLUMNS PRESENT
+2026-03-31 01:13:50 | INFO | validator | [stock][AAPL] Column 'Symbol' — no nulls ✓
+2026-03-31 01:13:50 | INFO | validator | [stock][AAPL] Column 'Date' — no nulls ✓
+2026-03-31 01:13:50 | INFO | validator | [stock][AAPL] Column 'Close' — no nulls ✓
+2026-03-31 01:16:26 | INFO | validator | ============================================================
+2026-03-31 01:16:26 | INFO | validator | VALIDATOR — starting
+2026-03-31 01:16:26 | INFO | validator | ============================================================
+2026-03-31 01:16:26 | INFO | validator | VALIDATING - AAPL
+2026-03-31 01:16:26 | INFO | validator | starting stock validation checks for AAPL
+2026-03-31 01:16:26 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-03-31 01:16:26 | INFO | validator | check complete for AAPL-stock : ALL COLUMNS PRESENT
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL] Column 'Symbol' — no nulls ✓
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL] Column 'Date' — no nulls ✓
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL] Column 'Close' — no nulls ✓
+2026-03-31 01:16:26 | INFO | validator | no duplicates found for stockAAPL
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL] 'Open' all values > 0 ✓
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL] 'High' all values > 0 ✓
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL] 'Low' all values > 0 ✓
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL]  High >= Low for all rows ✓
+2026-03-31 01:16:26 | INFO | validator | [stock][AAPL]  vol>=0 for all rows ✓
+2026-03-31 01:16:26 | INFO | validator | AAPL stock row count : 251minimum rows:50
+2026-03-31 01:16:26 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:16:26 | ERROR | validator | ["stock"] AAPL failed checks : ['dates']
+2026-03-31 01:16:26 | INFO | validator | starting news validation checks for AAPL
+2026-03-31 01:16:58 | INFO | validator | ============================================================
+2026-03-31 01:16:58 | INFO | validator | VALIDATOR — starting
+2026-03-31 01:16:58 | INFO | validator | ============================================================
+2026-03-31 01:16:58 | INFO | validator | VALIDATING - AAPL
+2026-03-31 01:16:58 | INFO | validator | starting stock validation checks for AAPL
+2026-03-31 01:16:58 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-03-31 01:16:58 | INFO | validator | check complete for AAPL-stock : ALL COLUMNS PRESENT
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL] Column 'Symbol' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL] Column 'Date' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL] Column 'Close' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | no duplicates found for stockAAPL
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL] 'Open' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL] 'High' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL] 'Low' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL]  High >= Low for all rows ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][AAPL]  vol>=0 for all rows ✓
+2026-03-31 01:16:58 | INFO | validator | AAPL stock row count : 251minimum rows:50
+2026-03-31 01:16:58 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:16:58 | ERROR | validator | ["stock"] AAPL failed checks : ['dates']
+2026-03-31 01:16:58 | INFO | validator | starting news validation checks for AAPL
+2026-03-31 01:16:58 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/AAPLnews_raw.csv
+2026-03-31 01:16:58 | INFO | validator | VALIDATING - GOOGL
+2026-03-31 01:16:58 | INFO | validator | starting stock validation checks for GOOGL
+2026-03-31 01:16:58 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/GOOGL_raw.csv
+2026-03-31 01:16:58 | INFO | validator | check complete for GOOGL-stock : ALL COLUMNS PRESENT
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL] Column 'Symbol' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL] Column 'Date' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL] Column 'Close' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | no duplicates found for stockGOOGL
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL] 'Open' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL] 'High' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL] 'Low' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL]  High >= Low for all rows ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][GOOGL]  vol>=0 for all rows ✓
+2026-03-31 01:16:58 | INFO | validator | GOOGL stock row count : 251minimum rows:50
+2026-03-31 01:16:58 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:16:58 | ERROR | validator | ["stock"] GOOGL failed checks : ['dates']
+2026-03-31 01:16:58 | INFO | validator | starting news validation checks for GOOGL
+2026-03-31 01:16:58 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/GOOGLnews_raw.csv
+2026-03-31 01:16:58 | INFO | validator | VALIDATING - MSFT
+2026-03-31 01:16:58 | INFO | validator | starting stock validation checks for MSFT
+2026-03-31 01:16:58 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/MSFT_raw.csv
+2026-03-31 01:16:58 | INFO | validator | check complete for MSFT-stock : ALL COLUMNS PRESENT
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT] Column 'Symbol' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT] Column 'Date' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT] Column 'Close' — no nulls ✓
+2026-03-31 01:16:58 | INFO | validator | no duplicates found for stockMSFT
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT] 'Open' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT] 'High' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT] 'Low' all values > 0 ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT]  High >= Low for all rows ✓
+2026-03-31 01:16:58 | INFO | validator | [stock][MSFT]  vol>=0 for all rows ✓
+2026-03-31 01:16:58 | INFO | validator | MSFT stock row count : 251minimum rows:50
+2026-03-31 01:16:58 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:16:58 | ERROR | validator | ["stock"] MSFT failed checks : ['dates']
+2026-03-31 01:16:58 | INFO | validator | starting news validation checks for MSFT
+2026-03-31 01:16:58 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/MSFTnews_raw.csv
+2026-03-31 01:16:58 | INFO | validator | VALIDATING - TSLA
+2026-03-31 01:16:58 | INFO | validator | starting stock validation checks for TSLA
+2026-03-31 01:16:59 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/TSLA_raw.csv
+2026-03-31 01:16:59 | INFO | validator | check complete for TSLA-stock : ALL COLUMNS PRESENT
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA] Column 'Symbol' — no nulls ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA] Column 'Date' — no nulls ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA] Column 'Close' — no nulls ✓
+2026-03-31 01:16:59 | INFO | validator | no duplicates found for stockTSLA
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA] 'Open' all values > 0 ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA] 'High' all values > 0 ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA] 'Low' all values > 0 ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA]  High >= Low for all rows ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][TSLA]  vol>=0 for all rows ✓
+2026-03-31 01:16:59 | INFO | validator | TSLA stock row count : 251minimum rows:50
+2026-03-31 01:16:59 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:16:59 | ERROR | validator | ["stock"] TSLA failed checks : ['dates']
+2026-03-31 01:16:59 | INFO | validator | starting news validation checks for TSLA
+2026-03-31 01:16:59 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/TSLAnews_raw.csv
+2026-03-31 01:16:59 | INFO | validator | VALIDATING - AMZN
+2026-03-31 01:16:59 | INFO | validator | starting stock validation checks for AMZN
+2026-03-31 01:16:59 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AMZN_raw.csv
+2026-03-31 01:16:59 | INFO | validator | check complete for AMZN-stock : ALL COLUMNS PRESENT
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN] Column 'Symbol' — no nulls ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN] Column 'Date' — no nulls ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN] Column 'Close' — no nulls ✓
+2026-03-31 01:16:59 | INFO | validator | no duplicates found for stockAMZN
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN] 'Open' all values > 0 ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN] 'High' all values > 0 ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN] 'Low' all values > 0 ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN]  High >= Low for all rows ✓
+2026-03-31 01:16:59 | INFO | validator | [stock][AMZN]  vol>=0 for all rows ✓
+2026-03-31 01:16:59 | INFO | validator | AMZN stock row count : 251minimum rows:50
+2026-03-31 01:16:59 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:16:59 | ERROR | validator | ["stock"] AMZN failed checks : ['dates']
+2026-03-31 01:16:59 | INFO | validator | starting news validation checks for AMZN
+2026-03-31 01:16:59 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/AMZNnews_raw.csv
+2026-03-31 01:16:59 | INFO | validator | ============================================================
+2026-03-31 01:16:59 | INFO | validator | VALIDATION SUMMARY
+2026-03-31 01:16:59 | INFO | validator | ============================================================
+2026-03-31 01:16:59 | INFO | validator | Stock - Passed : 0 | failed : 5 
+2026-03-31 01:16:59 | INFO | validator | News - Passed : 0 | failed : 5 
+2026-03-31 01:17:36 | INFO | validator | ============================================================
+2026-03-31 01:17:36 | INFO | validator | VALIDATOR — starting
+2026-03-31 01:17:36 | INFO | validator | ============================================================
+2026-03-31 01:17:36 | INFO | validator | VALIDATING - AAPL
+2026-03-31 01:17:36 | INFO | validator | starting stock validation checks for AAPL
+2026-03-31 01:17:36 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-03-31 01:17:36 | INFO | validator | check complete for AAPL-stock : ALL COLUMNS PRESENT
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL] Column 'Symbol' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL] Column 'Date' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL] Column 'Close' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | no duplicates found for stockAAPL
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL] 'Open' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL] 'High' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL] 'Low' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL]  High >= Low for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AAPL]  vol>=0 for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | AAPL stock row count : 251minimum rows:50
+2026-03-31 01:17:36 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:17:36 | ERROR | validator | ["stock"] AAPL failed checks : ['dates']
+2026-03-31 01:17:36 | INFO | validator | starting news validation checks for AAPL
+2026-03-31 01:17:36 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/AAPLnews_raw.csv
+2026-03-31 01:17:36 | INFO | validator | VALIDATING - GOOGL
+2026-03-31 01:17:36 | INFO | validator | starting stock validation checks for GOOGL
+2026-03-31 01:17:36 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/GOOGL_raw.csv
+2026-03-31 01:17:36 | INFO | validator | check complete for GOOGL-stock : ALL COLUMNS PRESENT
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL] Column 'Symbol' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL] Column 'Date' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL] Column 'Close' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | no duplicates found for stockGOOGL
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL] 'Open' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL] 'High' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL] 'Low' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL]  High >= Low for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][GOOGL]  vol>=0 for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | GOOGL stock row count : 251minimum rows:50
+2026-03-31 01:17:36 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:17:36 | ERROR | validator | ["stock"] GOOGL failed checks : ['dates']
+2026-03-31 01:17:36 | INFO | validator | starting news validation checks for GOOGL
+2026-03-31 01:17:36 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/GOOGLnews_raw.csv
+2026-03-31 01:17:36 | INFO | validator | VALIDATING - MSFT
+2026-03-31 01:17:36 | INFO | validator | starting stock validation checks for MSFT
+2026-03-31 01:17:36 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/MSFT_raw.csv
+2026-03-31 01:17:36 | INFO | validator | check complete for MSFT-stock : ALL COLUMNS PRESENT
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT] Column 'Symbol' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT] Column 'Date' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT] Column 'Close' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | no duplicates found for stockMSFT
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT] 'Open' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT] 'High' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT] 'Low' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT]  High >= Low for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][MSFT]  vol>=0 for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | MSFT stock row count : 251minimum rows:50
+2026-03-31 01:17:36 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:17:36 | ERROR | validator | ["stock"] MSFT failed checks : ['dates']
+2026-03-31 01:17:36 | INFO | validator | starting news validation checks for MSFT
+2026-03-31 01:17:36 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/MSFTnews_raw.csv
+2026-03-31 01:17:36 | INFO | validator | VALIDATING - TSLA
+2026-03-31 01:17:36 | INFO | validator | starting stock validation checks for TSLA
+2026-03-31 01:17:36 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/TSLA_raw.csv
+2026-03-31 01:17:36 | INFO | validator | check complete for TSLA-stock : ALL COLUMNS PRESENT
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA] Column 'Symbol' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA] Column 'Date' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA] Column 'Close' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | no duplicates found for stockTSLA
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA] 'Open' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA] 'High' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA] 'Low' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA]  High >= Low for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][TSLA]  vol>=0 for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | TSLA stock row count : 251minimum rows:50
+2026-03-31 01:17:36 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:17:36 | ERROR | validator | ["stock"] TSLA failed checks : ['dates']
+2026-03-31 01:17:36 | INFO | validator | starting news validation checks for TSLA
+2026-03-31 01:17:36 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/TSLAnews_raw.csv
+2026-03-31 01:17:36 | INFO | validator | VALIDATING - AMZN
+2026-03-31 01:17:36 | INFO | validator | starting stock validation checks for AMZN
+2026-03-31 01:17:36 | INFO | validator | SUCCESSFYLLY loaded 251 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AMZN_raw.csv
+2026-03-31 01:17:36 | INFO | validator | check complete for AMZN-stock : ALL COLUMNS PRESENT
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN] Column 'Symbol' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN] Column 'Date' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN] Column 'Close' — no nulls ✓
+2026-03-31 01:17:36 | INFO | validator | no duplicates found for stockAMZN
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN] 'Open' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN] 'High' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN] 'Low' all values > 0 ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN]  High >= Low for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | [stock][AMZN]  vol>=0 for all rows ✓
+2026-03-31 01:17:36 | INFO | validator | AMZN stock row count : 251minimum rows:50
+2026-03-31 01:17:36 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-03-31 01:17:36 | ERROR | validator | ["stock"] AMZN failed checks : ['dates']
+2026-03-31 01:17:36 | INFO | validator | starting news validation checks for AMZN
+2026-03-31 01:17:36 | ERROR | validator | file not found : c:\Users\Hp\market-sentiment-analysis\data/raw/news/AMZNnews_raw.csv
+2026-03-31 01:17:36 | INFO | validator | ============================================================
+2026-03-31 01:17:36 | INFO | validator | VALIDATION SUMMARY
+2026-03-31 01:17:36 | INFO | validator | ============================================================
+2026-03-31 01:17:36 | INFO | validator | Stock - Passed : 0 | failed : 5 
+2026-03-31 01:17:36 | INFO | validator | News - Passed : 0 | failed : 5 
+2026-03-31 01:17:36 | WARNING | validator | 10 file(s) failed validationReview errors above before running cleaning step.
