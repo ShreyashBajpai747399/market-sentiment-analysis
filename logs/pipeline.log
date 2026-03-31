@@ -1465,3 +1465,114 @@
 2026-03-31 17:51:18 | INFO | validator | Stock - Passed : 5 | failed : 0 
 2026-03-31 17:51:18 | INFO | validator | News - Passed : 5 | failed : 0 
 2026-03-31 17:51:18 | INFO | validator | ALL FILES PASSED CHECKS
+2026-04-01 00:15:33 | INFO | cleaner | ============================================================
+2026-04-01 00:15:33 | INFO | cleaner | CLEANER — starting
+2026-04-01 00:15:33 | INFO | cleaner | ============================================================
+2026-04-01 00:15:33 | INFO | cleaner | cleaning - AAPL
+2026-04-01 00:15:33 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/AAPL_raw.csv
+2026-04-01 00:15:33 | INFO | cleaner | [Stock][AAPL has 251 rows — now cleaning
+2026-04-01 00:15:33 | INFO | cleaner | [stock] AAPL no duplicate rows found
+2026-04-01 00:15:33 | INFO | cleaner | [stock] AAPL no rows with NULL Close found
+2026-04-01 00:15:33 | INFO | cleaner | [stock][AAPL] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:15:33 | INFO | cleaner | saved 251 rows to data/processed/stock/AAPL_processed.csv
+2026-04-01 00:15:34 | ERROR | utils | file not found : data/raw/news/AAPL_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | cleaning - GOOGL
+2026-04-01 00:15:34 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/GOOGL_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | [Stock][GOOGL has 251 rows — now cleaning
+2026-04-01 00:15:34 | INFO | cleaner | [stock] GOOGL no duplicate rows found
+2026-04-01 00:15:34 | INFO | cleaner | [stock] GOOGL no rows with NULL Close found
+2026-04-01 00:15:34 | INFO | cleaner | [stock][GOOGL] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:15:34 | INFO | cleaner | saved 251 rows to data/processed/stock/GOOGL_processed.csv
+2026-04-01 00:15:34 | ERROR | utils | file not found : data/raw/news/GOOGL_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | cleaning - MSFT
+2026-04-01 00:15:34 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/MSFT_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | [Stock][MSFT has 251 rows — now cleaning
+2026-04-01 00:15:34 | INFO | cleaner | [stock] MSFT no duplicate rows found
+2026-04-01 00:15:34 | INFO | cleaner | [stock] MSFT no rows with NULL Close found
+2026-04-01 00:15:34 | INFO | cleaner | [stock][MSFT] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:15:34 | INFO | cleaner | saved 251 rows to data/processed/stock/MSFT_processed.csv
+2026-04-01 00:15:34 | ERROR | utils | file not found : data/raw/news/MSFT_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | cleaning - TSLA
+2026-04-01 00:15:34 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/TSLA_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | [Stock][TSLA has 251 rows — now cleaning
+2026-04-01 00:15:34 | INFO | cleaner | [stock] TSLA no duplicate rows found
+2026-04-01 00:15:34 | INFO | cleaner | [stock] TSLA no rows with NULL Close found
+2026-04-01 00:15:34 | INFO | cleaner | [stock][TSLA] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:15:34 | INFO | cleaner | saved 251 rows to data/processed/stock/TSLA_processed.csv
+2026-04-01 00:15:34 | ERROR | utils | file not found : data/raw/news/TSLA_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | cleaning - AMZN
+2026-04-01 00:15:34 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/AMZN_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | [Stock][AMZN has 251 rows — now cleaning
+2026-04-01 00:15:34 | INFO | cleaner | [stock] AMZN no duplicate rows found
+2026-04-01 00:15:34 | INFO | cleaner | [stock] AMZN no rows with NULL Close found
+2026-04-01 00:15:34 | INFO | cleaner | [stock][AMZN] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:15:34 | INFO | cleaner | saved 251 rows to data/processed/stock/AMZN_processed.csv
+2026-04-01 00:15:34 | ERROR | utils | file not found : data/raw/news/AMZN_raw.csv
+2026-04-01 00:15:34 | INFO | cleaner | ============================================================
+2026-04-01 00:15:34 | INFO | cleaner | CLEANING SUMMARY
+2026-04-01 00:15:34 | INFO | cleaner | ============================================================
+2026-04-01 00:15:34 | WARNING | cleaner | 5 file(s) failed — review errors above
+2026-04-01 00:15:34 | INFO | cleaner | ============================================================
+2026-04-01 00:17:21 | INFO | cleaner | ============================================================
+2026-04-01 00:17:21 | INFO | cleaner | CLEANER — starting
+2026-04-01 00:17:21 | INFO | cleaner | ============================================================
+2026-04-01 00:17:21 | INFO | cleaner | cleaning - AAPL
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/AAPL_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [Stock][AAPL has 251 rows — now cleaning
+2026-04-01 00:17:21 | INFO | cleaner | [stock] AAPL no duplicate rows found
+2026-04-01 00:17:21 | INFO | cleaner | [stock] AAPL no rows with NULL Close found
+2026-04-01 00:17:21 | INFO | cleaner | [stock][AAPL] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 251 rows to data/processed/stock/AAPL_processed.csv
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 20 rows from data/raw/news/AAPL_news_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [news][AAPL] Starting cleaning — 20 rows
+2026-04-01 00:17:21 | INFO | cleaner | [news][AAPL] Cleaning complete — 20 → 20 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 20 rows to data/processed/news/AAPL_processed.csv
+2026-04-01 00:17:21 | INFO | cleaner | cleaning - GOOGL
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/GOOGL_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [Stock][GOOGL has 251 rows — now cleaning
+2026-04-01 00:17:21 | INFO | cleaner | [stock] GOOGL no duplicate rows found
+2026-04-01 00:17:21 | INFO | cleaner | [stock] GOOGL no rows with NULL Close found
+2026-04-01 00:17:21 | INFO | cleaner | [stock][GOOGL] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 251 rows to data/processed/stock/GOOGL_processed.csv
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 20 rows from data/raw/news/GOOGL_news_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [news][GOOGL] Starting cleaning — 20 rows
+2026-04-01 00:17:21 | INFO | cleaner | [news][GOOGL] Cleaning complete — 20 → 20 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 20 rows to data/processed/news/GOOGL_processed.csv
+2026-04-01 00:17:21 | INFO | cleaner | cleaning - MSFT
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/MSFT_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [Stock][MSFT has 251 rows — now cleaning
+2026-04-01 00:17:21 | INFO | cleaner | [stock] MSFT no duplicate rows found
+2026-04-01 00:17:21 | INFO | cleaner | [stock] MSFT no rows with NULL Close found
+2026-04-01 00:17:21 | INFO | cleaner | [stock][MSFT] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 251 rows to data/processed/stock/MSFT_processed.csv
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 20 rows from data/raw/news/MSFT_news_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [news][MSFT] Starting cleaning — 20 rows
+2026-04-01 00:17:21 | INFO | cleaner | [news][MSFT] Cleaning complete — 20 → 20 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 20 rows to data/processed/news/MSFT_processed.csv
+2026-04-01 00:17:21 | INFO | cleaner | cleaning - TSLA
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/TSLA_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [Stock][TSLA has 251 rows — now cleaning
+2026-04-01 00:17:21 | INFO | cleaner | [stock] TSLA no duplicate rows found
+2026-04-01 00:17:21 | INFO | cleaner | [stock] TSLA no rows with NULL Close found
+2026-04-01 00:17:21 | INFO | cleaner | [stock][TSLA] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 251 rows to data/processed/stock/TSLA_processed.csv
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 20 rows from data/raw/news/TSLA_news_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [news][TSLA] Starting cleaning — 20 rows
+2026-04-01 00:17:21 | INFO | cleaner | [news][TSLA] Cleaning complete — 20 → 20 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 20 rows to data/processed/news/TSLA_processed.csv
+2026-04-01 00:17:21 | INFO | cleaner | cleaning - AMZN
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 251 rows from data/raw/stock/AMZN_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [Stock][AMZN has 251 rows — now cleaning
+2026-04-01 00:17:21 | INFO | cleaner | [stock] AMZN no duplicate rows found
+2026-04-01 00:17:21 | INFO | cleaner | [stock] AMZN no rows with NULL Close found
+2026-04-01 00:17:21 | INFO | cleaner | [stock][AMZN] Cleaning complete — 251 → 251 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 251 rows to data/processed/stock/AMZN_processed.csv
+2026-04-01 00:17:21 | INFO | utils | SUCCESSFYLLY loaded 20 rows from data/raw/news/AMZN_news_raw.csv
+2026-04-01 00:17:21 | INFO | cleaner | [news][AMZN] Starting cleaning — 20 rows
+2026-04-01 00:17:21 | INFO | cleaner | [news][AMZN] Cleaning complete — 20 → 20 rows (0 removed total)
+2026-04-01 00:17:21 | INFO | cleaner | saved 20 rows to data/processed/news/AMZN_processed.csv
+2026-04-01 00:17:21 | INFO | cleaner | ============================================================
+2026-04-01 00:17:21 | INFO | cleaner | CLEANING SUMMARY
+2026-04-01 00:17:21 | INFO | cleaner | ============================================================
+2026-04-01 00:17:21 | INFO | cleaner | all files cleaned successfully
+2026-04-01 00:17:21 | INFO | cleaner | ============================================================

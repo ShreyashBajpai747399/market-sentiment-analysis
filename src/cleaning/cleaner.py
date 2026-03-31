@@ -254,7 +254,7 @@ def main():
         else:
             stock_failed.append(symbol)
         
-        news_path=os.path.join(raw_news_path,f"{symbol}_raw.csv")
+        news_path=os.path.join(raw_news_path,f"{symbol}_news_raw.csv")
         df_news=load_csv(news_path,logger)
 
         if df_news is not None:
