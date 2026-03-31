@@ -10,6 +10,9 @@ def load_config():
     #config_path is the path of the config file present in root
     config_path=os.path.join(base_dir,'config.json')
 
+    if not os.path.exists(config_path):
+        raise FileNotFoundError(f"config.json not found at {config_path}")
+    
     with open(config_path,'r') as f:
         config=json.load(f)
 
@@ -55,7 +58,7 @@ def setup_logger(logger_name,log_dir,log_filename):
 def ensure_dirs(base_dir, paths_config):
      for key,relative_path in paths_config.items():
         full_path=os.path.join(base_dir,relative_path) 
-        os.makedirs(full_path,if_exists=True)
+        os.makedirs(full_path,exist_ok=True)
 
 
 
