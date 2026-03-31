@@ -166,10 +166,9 @@ def validate_stock_file(symbol,raw_stock_path,logger,config):
     if df is None:
         return False
     
-    required_columns=["Symbol", "Date", "Open", "High",
-                      "Low", "Close", "Volume"]
+    required_columns=config["schema"]["stock_columns"]
     
-    critical_nulls=["Symbol","Date","Close"]
+    critical_nulls=config["schema"]["stock_critical"]
 
     results={
         "columns":check_required_columns(df,required_columns,symbol,"stock",logger),
@@ -207,8 +206,9 @@ def validate_news_file(symbol,raw_news_path,logger,config):
     if df is None:
         return False
     
-    required_columns=["title","description","link","date","symbol","raw_date"]
-    critical_nulls=["symbol","date","title"]
+    required_columns=config["schema"]["news_columns"]
+    
+    critical_nulls=config["schema"]["news_critical"]
 
     results={
          "columns":check_required_columns(df,required_columns,symbol,"news",logger),
