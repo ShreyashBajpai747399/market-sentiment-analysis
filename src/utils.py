@@ -1,6 +1,7 @@
 import os 
 import logging
 import json
+import pandas as pd
 
 def load_config():
     #base dir is the path of the root directory
@@ -58,5 +59,25 @@ def ensure_dirs(base_dir, paths_config):
 
 
 
-
-
+def load_csv(filepath,logger):
+    if not os.path.exists(filepath):
+        logger.error(
+            f'file not found : {filepath}'
+        )
+        return None
+    try:
+        df=pd.read_csv(filepath)
+        if df.empty:
+            logger.error(
+                f'no content to read from the csv : {filepath}'
+            )
+            return None
+        else :
+            logger.info(f'SUCCESSFYLLY loaded {len(df)} rows from {filepath}')
+            return df
+    
+    except Exception as e:
+        logger.error(
+            f'failed to read {filepath} : {type(e).__name__}:{e}'
+        )
+        return None

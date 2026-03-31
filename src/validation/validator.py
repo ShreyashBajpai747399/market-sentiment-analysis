@@ -3,30 +3,8 @@ import pandas as pd
 import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
-from utils import load_config,setup_logger
+from utils import load_config,setup_logger,load_csv
 
-def load_csv(filepath,logger):
-    if not os.path.exists(filepath):
-        logger.error(
-            f'file not found : {filepath}'
-        )
-        return None
-    try:
-        df=pd.read_csv(filepath)
-        if df.empty:
-            logger.error(
-                f'no content to read from the csv : {filepath}'
-            )
-            return None
-        else :
-            logger.info(f'SUCCESSFYLLY loaded {len(df)} rows from {filepath}')
-            return df
-    
-    except Exception as e:
-        logger.error(
-            f'failed to read {filepath} : {type(e).__name__}:{e}'
-        )
-        return None
     
 def check_required_columns(df,required_columns,symbol,data_type,logger):
     missing=[col for col in required_columns if col not in df.columns]
