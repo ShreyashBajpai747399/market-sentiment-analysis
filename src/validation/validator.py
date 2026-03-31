@@ -116,7 +116,7 @@ def check_stock_price_range(df,symbol,logger,data_type):
             logger.warning(
                 f"[stock][{symbol}] {len(invalid_hl)} rows where "
                 f"High < Low — data is corrupt. "
-                f"Dates: {invalid_hl['Date'].tolist()[:5] if "Date" in invalid.columns else []}"
+                f"Dates: {invalid_hl['Date'].tolist()[:5] if "Date" in invalid_hl.columns else []}"
             )
             failed=True
         else:

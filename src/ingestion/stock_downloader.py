@@ -48,7 +48,7 @@ def download_stock(symbol,start_date,end_date,interval,logger):
 
         #here we are forcing the columns to be in a specific order
         desired=["Symbol", "Date", "Open", "High", "Low", "Close", "Volume"]
-        df.reindex(columns=desired)
+        df=df.reindex(columns=desired)
         
         return df
 

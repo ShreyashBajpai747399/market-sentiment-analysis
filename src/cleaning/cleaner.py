@@ -259,7 +259,7 @@ def main():
 
         if df_news is not None:
             df_cleaned_news=clean_news_data(df_news,symbol,logger,config)
-            saved=save_clean_data(df_news,symbol,processed_news_path,logger)
+            saved=save_clean_data(df_cleaned_news,symbol,processed_news_path,logger)
             if saved:
                 news_success.append(symbol)
             else:
