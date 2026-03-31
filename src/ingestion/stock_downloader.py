@@ -84,7 +84,7 @@ def save_stock_data(df,symbol,raw_stock_path,logger):
         return None
     else:
         try:
-            df.to_csv(full_path,index=False)
+            df.to_csv(full_path, mode='a',header=not os.path.exists(full_path),index=False)
             logger.info(
                 f'{symbol} - Saved {len(df)} rows to {full_path}'
             )
