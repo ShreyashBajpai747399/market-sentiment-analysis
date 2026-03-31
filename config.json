@@ -66,11 +66,5 @@
       "stock":50,
       "news":20
     }
-  },
-  "schema": {
-    "stock_columns": ["Symbol", "Date", "Open", "High", "Low", "Close", "Volume"],
-    "news_columns": ["symbol", "date", "title", "description", "link"],
-    "stock_critical": ["Symbol","Date", "Close"],
-    "news_critical": ["symbol","date", "title"]
   }
 }

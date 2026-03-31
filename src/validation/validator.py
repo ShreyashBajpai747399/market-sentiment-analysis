@@ -3,8 +3,30 @@ import pandas as pd
 import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
-from utils import load_config,setup_logger,load_csv
+from utils import load_config,setup_logger
 
+def load_csv(filepath,logger):
+    if not os.path.exists(filepath):
+        logger.error(
+            f'file not found : {filepath}'
+        )
+        return None
+    try:
+        df=pd.read_csv(filepath)
+        if df.empty:
+            logger.error(
+                f'no content to read from the csv : {filepath}'
+            )
+            return None
+        else :
+            logger.info(f'SUCCESSFYLLY loaded {len(df)} rows from {filepath}')
+            return df
+    
+    except Exception as e:
+        logger.error(
+            f'failed to read {filepath} : {type(e).__name__}:{e}'
+        )
+        return None
     
 def check_required_columns(df,required_columns,symbol,data_type,logger):
     missing=[col for col in required_columns if col not in df.columns]
@@ -166,9 +188,10 @@ def validate_stock_file(symbol,raw_stock_path,logger,config):
     if df is None:
         return False
     
-    required_columns=config["schema"]["stock_columns"]
+    required_columns=["Symbol", "Date", "Open", "High",
+                      "Low", "Close", "Volume"]
     
-    critical_nulls=config["schema"]["stock_critical"]
+    critical_nulls=["Symbol","Date","Close"]
 
     results={
         "columns":check_required_columns(df,required_columns,symbol,"stock",logger),
@@ -206,9 +229,8 @@ def validate_news_file(symbol,raw_news_path,logger,config):
     if df is None:
         return False
     
-    required_columns=config["schema"]["news_columns"]
-    
-    critical_nulls=config["schema"]["news_critical"]
+    required_columns=["title","description","link","date","symbol","raw_date"]
+    critical_nulls=["symbol","date","title"]
 
     results={
          "columns":check_required_columns(df,required_columns,symbol,"news",logger),
