@@ -66,7 +66,7 @@ def clean_stock_data(df,symbol,logger,config):
         )
     else:
         logger.info(
-            f'[stock] {symbol} no rows with NULL Close found'
+            f'[stock] {symbol} no rows with NULL value found'
         )
 
     #volume an date correction
@@ -83,7 +83,11 @@ def clean_stock_data(df,symbol,logger,config):
     (df["Open"]  <= 0) |
     (df["High"]  <= 0) |
     (df["Low"]   <= 0) |
-    (df["High"]  <  df["Low"])]
+    (df["High"]  <  df["Low"])|
+    (df["Low"]<=df["Open"])|
+    (df["Low"]<=df["Close"])|
+    (df["High"]>=df["Open"])|
+    (df["High"]>=df["Close"])]
     if len(bad_price)>0:
         logger.warning(
             f"[stock][{symbol}] Found {len(bad_price)} rows with invalid price data — removing"
@@ -125,7 +129,7 @@ def clean_news_data(df,symbol,logger,config):
     df["title"]=df["title"].str.strip()
     df=df[df["title"]!=""]
     #remove very short title
-    df=df[df["title"].str.len()>15]
+    df=df[df["title"].str.len()>8]
     #remove invalid symbols
     df=df[df["title"].str.contains(r"[A-Za-z]",regex=True)]
     #remove nulls
@@ -191,10 +195,9 @@ def clean_news_data(df,symbol,logger,config):
     )
     return df
 
-def save_clean_data(df,symbol,output_path,logger):
+def save_clean_data(df,symbol,output_path,file_suffix,logger):
     os.makedirs(output_path,exist_ok=True)
-
-    file_name=f'{symbol}_processed.csv'
+    file_name=f'{symbol}_{file_suffix}_processed.csv'
     full_path=os.path.join(output_path,file_name)
 
     try:
@@ -220,8 +223,8 @@ def main():
     config,base_dir=load_config()
     log_dir=os.path.join(base_dir,config["paths"]["logs"])
     log_filename=config["logging"]["log_filename"]
-    raw_stock_path=config["paths"]["raw_stock"]
-    raw_news_path=config["paths"]["raw_news"]
+    raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
+    raw_news_path=os.path.join(base_dir,config["paths"]["raw_news"])
     processed_stock_path=config["paths"]["processed_stock"]
     processed_news_path=config["paths"]["processed_news"]
     
@@ -246,7 +249,8 @@ def main():
 
         if df_stock is not None:
             df_cleaned_stock=clean_stock_data(df_stock,symbol,logger,config)
-            saved=save_clean_data(df_cleaned_stock,symbol,processed_stock_path,logger)
+            if df_cleaned_stock is not None:
+                saved=save_clean_data(df_cleaned_stock,symbol,processed_stock_path,"stock",logger)
             if saved:
                 stock_success.append(symbol)
             else :
@@ -259,7 +263,8 @@ def main():
 
         if df_news is not None:
             df_cleaned_news=clean_news_data(df_news,symbol,logger,config)
-            saved=save_clean_data(df_cleaned_news,symbol,processed_news_path,logger)
+            if df_cleaned_news is not None:
+                saved=save_clean_data(df_cleaned_news,symbol,processed_news_path,"news",logger)
             if saved:
                 news_success.append(symbol)
             else:
