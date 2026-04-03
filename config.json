@@ -66,5 +66,21 @@
       "stock":50,
       "news":20
     }
+  },
+  "symbol_keywords":{
+     "AAPL":  ["apple", "iphone", "ipad", "mac", "tim cook", "app store", 
+               "ios", "macbook", "airpods", "aapl"],
+
+    "GOOGL": ["google", "alphabet", "youtube", "android", "chrome", 
+               "deepmind", "gemini", "googl", "sundar pichai"],
+
+    "MSFT":  ["microsoft", "windows", "azure", "office", "xbox", 
+               "linkedin", "teams", "satya nadella", "msft", "copilot"],
+
+    "TSLA":  ["tesla", "elon musk", "electric vehicle", "ev", "cybertruck",
+               "gigafactory", "tsla", "autopilot", "powerwall"],
+
+    "AMZN":  ["amazon", "aws", "prime", "jeff bezos", "andy jassy",
+               "alexa", "whole foods", "amzn", "kindle", "fulfillment"]
   }
 }

@@ -121,9 +121,54 @@ def clean_news_data(df,symbol,logger,config):
             f'[news] {symbol} removed {removed} duplicate rows' 
         )
 
+    #filtering relevant information 
+
+    def filter_relevant_news(df,symbol,logger):
+        if symbol not in config["symbol_keywords"]:
+            logger.warning(
+                f"[{symbol}] No keyword list defined in SYMBOL_KEYWORDS. "
+                f"Skipping relevance filter — all articles kept."
+            )
+            return df    
+    
+        keywords=config["symbol_keywords"][symbol]
+        original_count=len(df)
+
+        def is_relevant(title):
+            if not isinstance(title,str):
+                return True
+            
+            title_lower=title.lower()
+            return any(keyword in title_lower for keyword in keywords)
+        relevant_mask=df["title"].apply(is_relevant)
+        
+        df_filtered=df[relevant_mask].copy()
+        
+        removed_count=original_count-len(df)
+        
+        if removed_count > 0:
+                logger.warning(
+                    f"[{symbol}] Relevance filter removed {removed_count} articles "
+                    f"({(removed_count / original_count) * 100:.1f}%) as irrelevant. "
+                    f"{len(df_filtered)} articles remaining."
+                )
+        else:
+            logger.info(
+                f"[{symbol}] Relevance filter passed — "
+                f"all {original_count} articles appear relevant."
+            )
+        if len(df_filtered) == 0:
+            logger.critical(
+                f"[{symbol}] Relevance filter removed ALL articles. "
+                f"Keyword list may be too strict. "
+                f"Returning unfiltered data to prevent data loss."
+            )
+            return df
+    
+        return df_filtered
 
     #title cleaning 
-
+    df= filter_relevant_news(df,symbol,logger)
     before=len(df)
     #strip title
     df["title"]=df["title"].str.strip()
