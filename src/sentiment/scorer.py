@@ -33,15 +33,34 @@ def get_sentiment_label(compound_score,config):
         return "NEUTRAL"
     
 def score_news_file(symbol,processed_news_path,sentiment_path,analyser,config,logger):
+
     file_path=os.path.join(processed_news_path,f'{symbol}_news_processed.csv')
     df=load_csv(filepath=file_path,logger=logger)
 
+    
     if df is None:
         logger.error(
             f"[sentiment][{symbol}] Could not load news file — skipping"
         )
         return False
     
+    df["link"] = df["link"].str.strip().str.split("?").str[0]
+    
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"]).dt.date
+
+    output_path=os.path.join(sentiment_path,f"{symbol}_sentiment.csv")
+    if os.path.exists(output_path):
+        existing_df=pd.read_csv(output_path)
+        existing_df["link"] = existing_df["link"].str.strip().str.split("?").str[0]
+        already_scored=set(existing_df["link"].str.strip())
+        df=df[~df["link"].str.strip().isin(already_scored)]  
+    
+    if df.empty:
+        logger.warning(
+            f'[sentiment] {symbol} no new articles to score '
+        )
+        return True
     logger.info(
         f'[sentiment] {symbol} scoring {len(df)} articles'
     )
@@ -63,7 +82,7 @@ def score_news_file(symbol,processed_news_path,sentiment_path,analyser,config,lo
             f"column found — cannot score"
         )
         return False
-    
+
     scores_list=df[score_col].apply(score_text,analyser=analyser)
 
     scores_df=pd.DataFrame(scores_list.tolist())
@@ -88,11 +107,31 @@ def score_news_file(symbol,processed_news_path,sentiment_path,analyser,config,lo
         f"NEGATIVE: {label_counts.get('NEGATIVE', 0)} | "
         f"NEUTRAL: {label_counts.get('NEUTRAL', 0)}"
     )
-    os.makedirs(sentiment_path,exist_ok=True)
-    output_path=os.path.join(sentiment_path,f"{symbol}_sentiment.csv")
 
+    
+    cols_to_drop = ["text", "description"]
+    df = df.drop(columns=[c for c in cols_to_drop if c in df.columns])
+    
+    df["symbol"]=symbol
+
+    desired = [
+    "date",
+    "symbol",
+    "title",
+    "link",
+    "compound_score",
+    "positive_score",
+    "negative_score",
+    "neutral_score",
+    "sentiment_label"
+    ]
+    
+    df=df[[c for c in desired if c in df.columns]]
+
+    os.makedirs(sentiment_path,exist_ok=True)
     try:
-        df.to_csv(output_path, index=False)
+        file_exists = os.path.exists(output_path)
+        df.to_csv(output_path, index=False,mode="a",header=not file_exists )
         logger.info(
             f"[sentiment][{symbol}] Saved {len(df)} scored rows "
             f"→ {output_path}"
@@ -113,6 +152,7 @@ def main():
     sentiment_path=os.path.join(base_dir,config["paths"]["sentiment"])
     symbols=config["stocks"]["symbols"]
     logger=setup_logger(__name__,log_dir,log_filename)
+
 
     logger.info("="*60)
     logger.info("STARTING SENTIMENT ANALYSER")
@@ -139,6 +179,7 @@ def main():
                 f'[sentiment] {symbol} crashed. '
                 f'{type(e).__name__} : {e}'
             )
+            failed.append(symbol)
     
     if failed==[]:
         logger.info(f"ALL SYMBOLS SCORED SUCCESSFULLY : {successful}")
@@ -148,7 +189,7 @@ def main():
         )
     else:
         logger.warning(
-            f'FAILED TO SCORE {len(failed)}  SYMBOLS : {failed}'
+            f'FAILED TO SCORE {len(failed)}  SYMBOLS : {failed} | '
             f'{len(successful)} SYMBOLS SCORED SUCCESSFULLY : {successful}'
         )
     logger.info("="*60)
