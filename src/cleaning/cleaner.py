@@ -240,27 +240,27 @@ def clean_news_data(df,symbol,logger,config):
     )
     return df
 
-def save_clean_data(df,symbol,output_path,file_suffix,logger):
+def save_clean_data(df,symbol,output_path,file_suffix,logger,append=False):
     os.makedirs(output_path,exist_ok=True)
     file_name=f'{symbol}_{file_suffix}_processed.csv'
     full_path=os.path.join(output_path,file_name)
-
     try:
-        df.to_csv(full_path,index=False)
-        logger.info(
-            f'saved {len(df)} rows to {full_path}'
-        )
+        if append and os.path.exists(full_path):
+                df.to_csv(full_path, index=False, mode="a", header=False)
+                # deduplicate after appending
+                df_full = pd.read_csv(full_path)
+                df_full = df_full.drop_duplicates(keep="first")
+                df_full.to_csv(full_path, index=False)
+                logger.info(f'appended and deduped → {full_path}')
+        else:
+                df.to_csv(full_path, index=False)
+                logger.info(f'saved {len(df)} rows → {full_path}')
         return full_path
     except PermissionError:
-        logger.error(
-            f'cannot write to {full_path} file may be open somewhere else'
-        )
+        logger.error(f'cannot write to {full_path}')
         return None
-    
-    except Exception as e :
-        logger.error(
-            f'failed to save to {full_path} : {type(e).__name__} : {e}'
-        ) 
+    except Exception as e:
+        logger.error(f'failed to save {full_path}: {type(e).__name__}: {e}')
         return None
 
     
@@ -309,7 +309,7 @@ def main():
         if df_news is not None:
             df_cleaned_news=clean_news_data(df_news,symbol,logger,config)
             if df_cleaned_news is not None:
-                saved=save_clean_data(df_cleaned_news,symbol,processed_news_path,"news",logger)
+                saved=save_clean_data(df_cleaned_news,symbol,processed_news_path,"news",logger,append=True)
             if saved:
                 news_success.append(symbol)
             else:

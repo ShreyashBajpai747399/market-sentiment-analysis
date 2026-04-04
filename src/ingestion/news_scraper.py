@@ -150,7 +150,7 @@ def save_news_data(articles,raw_news_path,symbol,logger):
     file_path=os.path.join(raw_news_path,file_name)
 
     try:
-        df.to_csv(file_path,index=False,encoding='utf-8')
+        df.to_csv(file_path,index=False,encoding='utf-8',quoting=csv.QUOTE_ALL)
         logger.info(f'saved {len(df)} articles to {raw_news_path} SUCCESSFULLY')
         return True
     
