@@ -2431,3 +2431,75 @@
 2026-04-03 16:18:14 | INFO | cleaner | ============================================================
 2026-04-03 16:18:14 | INFO | cleaner | all files cleaned successfully
 2026-04-03 16:18:14 | INFO | cleaner | ============================================================
+2026-04-04 13:31:14 | INFO | scorer | ============================================================
+2026-04-04 13:31:14 | INFO | scorer | STARTING SENTIMENT ANALYSER
+2026-04-04 13:31:14 | INFO | scorer | ============================================================
+2026-04-04 13:31:14 | INFO | scorer | VADER ANALYSER INITIALISED
+2026-04-04 13:31:14 | INFO | scorer | SCORING AAPL
+2026-04-04 13:31:14 | INFO | utils | SUCCESSFYLLY loaded 7 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/AAPL_news_processed.csv
+2026-04-04 13:31:14 | INFO | scorer | [sentiment] AAPL scoring 7 articles
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][AAPL] Using 'text' column for scoring
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][AAPL] Distribution — POSITIVE: 6 | NEGATIVE: 1 | NEUTRAL: 0
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][AAPL] Saved 7 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/AAPL_sentiment.csv
+2026-04-04 13:31:14 | INFO | scorer | SCORING GOOGL
+2026-04-04 13:31:14 | INFO | utils | SUCCESSFYLLY loaded 5 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/GOOGL_news_processed.csv
+2026-04-04 13:31:14 | INFO | scorer | [sentiment] GOOGL scoring 5 articles
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][GOOGL] Using 'text' column for scoring
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][GOOGL] Distribution — POSITIVE: 3 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][GOOGL] Saved 5 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/GOOGL_sentiment.csv
+2026-04-04 13:31:14 | INFO | scorer | SCORING MSFT
+2026-04-04 13:31:14 | INFO | utils | SUCCESSFYLLY loaded 9 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/MSFT_news_processed.csv
+2026-04-04 13:31:14 | INFO | scorer | [sentiment] MSFT scoring 9 articles
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][MSFT] Using 'text' column for scoring
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][MSFT] Distribution — POSITIVE: 7 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][MSFT] Saved 9 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/MSFT_sentiment.csv
+2026-04-04 13:31:14 | INFO | scorer | SCORING TSLA
+2026-04-04 13:31:14 | INFO | utils | SUCCESSFYLLY loaded 13 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/TSLA_news_processed.csv
+2026-04-04 13:31:14 | INFO | scorer | [sentiment] TSLA scoring 13 articles
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][TSLA] Using 'text' column for scoring
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][TSLA] Distribution — POSITIVE: 4 | NEGATIVE: 6 | NEUTRAL: 3
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][TSLA] Saved 13 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/TSLA_sentiment.csv
+2026-04-04 13:31:14 | INFO | scorer | SCORING AMZN
+2026-04-04 13:31:14 | INFO | utils | SUCCESSFYLLY loaded 13 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/AMZN_news_processed.csv
+2026-04-04 13:31:14 | INFO | scorer | [sentiment] AMZN scoring 13 articles
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][AMZN] Using 'text' column for scoring
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][AMZN] Distribution — POSITIVE: 11 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-04 13:31:14 | INFO | scorer | [sentiment][AMZN] Saved 13 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/AMZN_sentiment.csv
+2026-04-04 13:31:14 | WARNING | scorer | FAILED TO SCORE 0  SYMBOLS : []5 SYMBOLS SCORED SUCCESSFULLY : ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN']
+2026-04-04 13:31:14 | INFO | scorer | ============================================================
+2026-04-04 13:32:18 | INFO | scorer | ============================================================
+2026-04-04 13:32:18 | INFO | scorer | STARTING SENTIMENT ANALYSER
+2026-04-04 13:32:18 | INFO | scorer | ============================================================
+2026-04-04 13:32:18 | INFO | scorer | VADER ANALYSER INITIALISED
+2026-04-04 13:32:18 | INFO | scorer | SCORING AAPL
+2026-04-04 13:32:18 | INFO | utils | SUCCESSFYLLY loaded 7 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/AAPL_news_processed.csv
+2026-04-04 13:32:18 | INFO | scorer | [sentiment] AAPL scoring 7 articles
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][AAPL] Using 'text' column for scoring
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][AAPL] Distribution — POSITIVE: 6 | NEGATIVE: 1 | NEUTRAL: 0
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][AAPL] Saved 7 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/AAPL_sentiment.csv
+2026-04-04 13:32:18 | INFO | scorer | SCORING GOOGL
+2026-04-04 13:32:18 | INFO | utils | SUCCESSFYLLY loaded 5 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/GOOGL_news_processed.csv
+2026-04-04 13:32:18 | INFO | scorer | [sentiment] GOOGL scoring 5 articles
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][GOOGL] Using 'text' column for scoring
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][GOOGL] Distribution — POSITIVE: 3 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][GOOGL] Saved 5 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/GOOGL_sentiment.csv
+2026-04-04 13:32:18 | INFO | scorer | SCORING MSFT
+2026-04-04 13:32:18 | INFO | utils | SUCCESSFYLLY loaded 9 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/MSFT_news_processed.csv
+2026-04-04 13:32:18 | INFO | scorer | [sentiment] MSFT scoring 9 articles
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][MSFT] Using 'text' column for scoring
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][MSFT] Distribution — POSITIVE: 7 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][MSFT] Saved 9 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/MSFT_sentiment.csv
+2026-04-04 13:32:18 | INFO | scorer | SCORING TSLA
+2026-04-04 13:32:18 | INFO | utils | SUCCESSFYLLY loaded 13 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/TSLA_news_processed.csv
+2026-04-04 13:32:18 | INFO | scorer | [sentiment] TSLA scoring 13 articles
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][TSLA] Using 'text' column for scoring
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][TSLA] Distribution — POSITIVE: 4 | NEGATIVE: 6 | NEUTRAL: 3
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][TSLA] Saved 13 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/TSLA_sentiment.csv
+2026-04-04 13:32:18 | INFO | scorer | SCORING AMZN
+2026-04-04 13:32:18 | INFO | utils | SUCCESSFYLLY loaded 13 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/AMZN_news_processed.csv
+2026-04-04 13:32:18 | INFO | scorer | [sentiment] AMZN scoring 13 articles
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][AMZN] Using 'text' column for scoring
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][AMZN] Distribution — POSITIVE: 11 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-04 13:32:18 | INFO | scorer | [sentiment][AMZN] Saved 13 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/AMZN_sentiment.csv
+2026-04-04 13:32:18 | INFO | scorer | ALL SYMBOLS SCORED SUCCESSFULLY : ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN']
+2026-04-04 13:32:18 | INFO | scorer | ============================================================

@@ -2,7 +2,8 @@ import pandas as pd
 import os
 import sys
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__name__))))
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import load_config , load_csv , setup_logger
 
 #creating the analyser (could've been skipped but if we want to create the analyser in any other file then we can use this)
@@ -106,11 +107,11 @@ def score_news_file(symbol,processed_news_path,sentiment_path,analyser,config,lo
 
 def main():
     config,base_dir=load_config()
-    log_dir=os.path.join(base_dir,config["paths"]["log"])
+    log_dir=os.path.join(base_dir,config["paths"]["logs"])
     log_filename=config["logging"]["log_filename"]
     processed_news_path=os.path.join(base_dir,config["paths"]["processed_news"])
     sentiment_path=os.path.join(base_dir,config["paths"]["sentiment"])
-    symbols=config["stock"]["symbols"]
+    symbols=config["stocks"]["symbols"]
     logger=setup_logger(__name__,log_dir,log_filename)
 
     logger.info("="*60)
@@ -139,9 +140,9 @@ def main():
                 f'{type(e).__name__} : {e}'
             )
     
-    if failed==0:
+    if failed==[]:
         logger.info(f"ALL SYMBOLS SCORED SUCCESSFULLY : {successful}")
-    elif successful==0:
+    elif successful==[]:
         logger.error(
             f"FAILED TO SCORE ALL {len(symbols)} SYMBOLS : {failed}"
         )
