@@ -33,9 +33,9 @@
   "database": {
     "host":     "localhost",
     "port":     3306,
-    "name":     "financial_sentiment_db",
+    "name":     "market_sentiment_analysis",
     "user":     "root",
-    "password": "your_mysql_password_here",
+    "password": "826643",
     "charset":  "utf8mb4"
   },
 
