@@ -67,7 +67,7 @@ def get_symbol_map(conn):
 
 def get_date_map(conn):
     cursor=conn.cursor()
-    cursor.execute("select full_date,date_id from DIM_DATE;")
+    cursor.execute("select full_date,date_id from DIM_DATES;")
     mapping={str(row[0]):row[1] for row in cursor.fetchall()}
     cursor.close()
     return mapping
@@ -171,8 +171,8 @@ def load_news_articles(conn,config,base_dir,date_map,symbol_map,logger):
             f"inserted: {inserted} | skipped: {skipped}"
         )
 
-        total_inserted=inserted
-        total_skipped=skipped
+        total_inserted+=inserted
+        total_skipped+=skipped
     
     cursor.close()
     logger.info(
@@ -180,3 +180,60 @@ def load_news_articles(conn,config,base_dir,date_map,symbol_map,logger):
         f"inserted: {total_inserted} | skipped: {total_skipped}"
     )
 
+def main():
+    config,base_dir=load_config()
+    log_dir=config["paths"]["logs"]
+    log_filename=config["logging"]["log_filename"]
+    logger=setup_logger(__name__,log_dir,log_filename)
+
+    logger.info("="*60)
+    logger.info(f'STARTING LOADER ')
+    logger.info("="*60)
+
+    conn=connect_to_database(config,logger)
+    
+    try:
+        logger.info(
+            f'STEP 1 — POPULATING DIM_DATES'
+        )
+        fill_DIM_DATE(conn,config,logger)
+
+        cursor=conn.cursor()
+        cursor.execute("select count(*) from DIM_DATES;")
+        count=cursor.fetchone()[0]
+        logger.info(f"DIM_SYMBOL has {count} rows")
+
+        logger.info("STEP 2 — BUILDING LOOKUP MAPS  ")
+        symbol_map=get_symbol_map(conn)
+        date_map=get_date_map(conn)
+
+        logger.info(
+            f"Maps ready — {len(symbol_map)} SYMBOLS , {len(date_map)} DATES"
+        )
+
+        
+        logger.info("STEP 3 — LOADING FACT_STOCK_PRICES ")
+        load_stock_prices(conn,config,base_dir,symbol_map,date_map,logger)
+        
+        
+        logger.info("STEP 3 — LOADING FACT_NEWS_ARTICLES ")
+        load_news_articles(conn,config,base_dir,date_map,symbol_map,logger)
+
+        logger.info("="*60)
+        logger.info(
+            f"LOADING SUCCESSFULL"
+        )
+        logger.info("="*60)
+
+    except Exception as e :
+        logger.critical(
+            f"LOADER CRASHED {type(e).__name__} : {e}"
+        )
+
+    finally:
+        conn.close()
+        logger.info(""
+        "MySQL CONNECTION CLOSED")
+
+if __name__=="__main__":
+    main()
