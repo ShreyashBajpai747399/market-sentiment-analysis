@@ -110,3 +110,11 @@ create table if not exists Fact_Combined_Analysis(
 	foreign key (symbol_id) references DIM_SYMBOL(symbol_id),
     foreign key (date_id) references DIM_DATE(date_id)
 );
+
+insert ignore into DIM_SYMBOL(symbol,company_name) values(
+	("AAPL","Apple Inc."),
+    ("GOOGL","Google Inc."),
+    ("MSFT","Microsoft Corporation"),
+    ("TSLA","Tesla Inc."),
+    ("AMZN","Amazon.com Inc.")
+);

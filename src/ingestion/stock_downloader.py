@@ -2,6 +2,7 @@ import yfinance as yf
 import pandas as pd
 import os
 import sys
+from datetime import datetime
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import load_config, setup_logger
@@ -111,7 +112,7 @@ def main():
 
     symbols=config["stocks"]["symbols"]
     start_date=config["stocks"]["start_date"]
-    end_date=config["stocks"]["end_date"]
+    end_date=datetime.today().strftime("%Y-%m-%d")
     interval=config["stocks"]["interval"]
     
     successful,failed=[],[]
