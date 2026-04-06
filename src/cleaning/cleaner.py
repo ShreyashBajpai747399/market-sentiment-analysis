@@ -79,15 +79,16 @@ def clean_stock_data(df,symbol,logger,config):
 
     
     # all columns bad price / price less than 0 correction
-    bad_price=df[(df["Close"] <= 0) |
+    bad_price=df[
+    (df["Close"] <= 0) |
     (df["Open"]  <= 0) |
     (df["High"]  <= 0) |
     (df["Low"]   <= 0) |
     (df["High"]  <  df["Low"])|
-    (df["Low"]<=df["Open"])|
-    (df["Low"]<=df["Close"])|
-    (df["High"]>=df["Open"])|
-    (df["High"]>=df["Close"])]
+    (df["Low"]>=df["Open"])|
+    (df["Low"]>=df["Close"])|
+    (df["High"]<=df["Open"])|
+    (df["High"]<=df["Close"])]
     if len(bad_price)>0:
         logger.warning(
             f"[stock][{symbol}] Found {len(bad_price)} rows with invalid price data — removing"

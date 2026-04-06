@@ -38,7 +38,7 @@ def fill_DIM_DATE(conn,config,logger):
     for date in dates:
         is_trading=date.weekday()<5
 
-        cursor.execute(""" INSERT IGNORE INTO DIM_DATES (full_date,year,month,day,day_of_week,is_trading_day) VALUES (%s, %s, %s, %s, %s, %s);""",(
+        cursor.execute(""" INSERT IGNORE INTO DIM_DATE (full_date,year,month,day,day_of_week,is_trading_day) VALUES (%s, %s, %s, %s, %s, %s);""",(
             date.strftime("%Y-%m-%d"),
             int(date.year),
             int(date.month),
@@ -67,7 +67,7 @@ def get_symbol_map(conn):
 
 def get_date_map(conn):
     cursor=conn.cursor()
-    cursor.execute("select full_date,date_id from DIM_DATES;")
+    cursor.execute("select full_date,date_id from DIM_DATE;")
     mapping={str(row[0]):row[1] for row in cursor.fetchall()}
     cursor.close()
     return mapping
@@ -79,7 +79,7 @@ def load_stock_prices(conn,config,base_dir,symbol_map,date_map,logger):
     total_inserted,total_skipped=0,0
 
     for symbol in symbols:
-        file_path=os.path.join(stock_path,f"{symbol}_processed.csv")
+        file_path=os.path.join(stock_path,f"{symbol}_stock_processed.csv")
         if not os.path.exists(file_path):
             logger.warning(f"[loader][stock] Not found: {file_path} — skipping")
             continue
@@ -194,12 +194,12 @@ def main():
     
     try:
         logger.info(
-            f'STEP 1 — POPULATING DIM_DATES'
+            f'STEP 1 — POPULATING DIM_DATE'
         )
         fill_DIM_DATE(conn,config,logger)
 
         cursor=conn.cursor()
-        cursor.execute("select count(*) from DIM_DATES;")
+        cursor.execute("select count(*) from DIM_DATE;")
         count=cursor.fetchone()[0]
         logger.info(f"DIM_SYMBOL has {count} rows")
 
