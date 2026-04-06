@@ -40,7 +40,7 @@ create table if not exists Fact_Stock_Prices (
     foreign key (symbol_id) references DIM_SYMBOL(symbol_id)
 );
 
-create table if not exists Fack_News_Articles(
+create table if not exists Fact_News_Articles(
 	article_id int not null auto_increment,
     date_id int not null,
     symbol_id int not null,
