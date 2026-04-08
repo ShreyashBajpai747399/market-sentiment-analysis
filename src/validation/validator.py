@@ -51,7 +51,7 @@ def check_null_values(df,symbol,critical_nulls,data_type,logger):
 def check_duplicates(df,subset_cols,symbol,data_type,logger):
     existing_cols=[c for c in subset_cols if c in df.columns]
 
-    #subset columns mean that pyhton will check the duplicacy based on all the columns present in the subset
+    #subset columns means that python will check the duplicacy based on all the columns present in the subset
     duplicate_count=df.duplicated(subset=existing_cols).sum()
 
     if duplicate_count>0:

@@ -47,8 +47,6 @@ def download_stock(symbol,start_date,interval,logger):
 
 
         #here we are forcing the columns to be in a specific order
-        # Symbol,Date,Open,High,Low,Close,Volume
-        
         desired=["Symbol", "Date", "Open", "High", "Low", "Close", "Volume"]
         df=df.reindex(columns=desired)
         
@@ -86,7 +84,7 @@ def save_stock_data(df,symbol,raw_stock_path,logger):
         return None
     else:
         try:
-            df.to_csv(full_path,index=False)
+            df.to_csv(full_path, mode='a',header=not os.path.exists(full_path),index=False)
             logger.info(
                 f'{symbol} - Saved {len(df)} rows to {full_path}'
             )
@@ -106,47 +104,22 @@ def main():
     log_dir=os.path.join(base_dir,config["paths"]["logs"])
     raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
     logger=setup_logger(__name__,log_dir,config["logging"]["log_filename"])
-
+    
     logger.info("=" * 60)
     logger.info("STOCK DOWNLOADER — starting")
     logger.info("=" * 60)
 
-
     symbols=config["stocks"]["symbols"]
-
+    start_date=datetime.today().strftime("%Y-%m-%d")
     interval=config["stocks"]["interval"]
     
     successful,failed=[],[]
 
     for symbol in symbols:
-        file_path=os.path.join(raw_stock_path,f"{symbol}_raw.csv")
-        if os.path.exists(file_path):
-            existing_df=pd.read_csv(file_path)
-            last_date=pd.to_datetime(existing_df["Date"]).max()
-            start_date=(last_date+pd.Timedelta(days=1)).strftime("%Y-%m-%d")
-        else:
-            existing_df=None
-            start_date=config["stocks"]["start_date"]
-    
-    
         df=download_stock(symbol=symbol,start_date=start_date,interval=interval,logger=logger )
 
         if df is not None:
-            today=pd.Timestamp.today().normalize()
-            df=df[pd.to_datetime(df["Date"])<today]
-            if df.empty:
-                logger.info(f"No new data for {symbol}")
-                continue
-
-            if existing_df is not None:
-                combined=pd.concat([existing_df,df])
-                combined.drop_duplicates(subset=["Symbol","Date"],inplace=True,keep="last")
-                combined.columns=df.columns
-            
-            else:
-                combined=df
-
-            saved=save_stock_data(combined,symbol,raw_stock_path,logger)
+            saved=save_stock_data(df,symbol,raw_stock_path,logger)
             if saved :
                 successful.append(symbol)
             else:
