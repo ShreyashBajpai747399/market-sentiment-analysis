@@ -5607,3 +5607,344 @@
 2026-04-08 16:09:31 | INFO | loader | LOADING SUCCESSFULL
 2026-04-08 16:09:31 | INFO | loader | ============================================================
 2026-04-08 16:09:31 | INFO | loader | MySQL CONNECTION CLOSED
+2026-04-09 16:16:12 | INFO | news_scraper | ============================================================
+2026-04-09 16:16:12 | INFO | news_scraper | NEWS SCRAPER - STARTING
+2026-04-09 16:16:12 | INFO | news_scraper | ============================================================
+2026-04-09 16:16:12 | INFO | news_scraper | ── Processing AAPL ──
+2026-04-09 16:16:12 | INFO | news_scraper | Fetching RSS feed for AAPL — https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US
+2026-04-09 16:16:13 | INFO | news_scraper | RSS feed fetched successfully for AAPL
+2026-04-09 16:16:14 | INFO | news_scraper | found 20 articles for AAPL
+2026-04-09 16:16:14 | INFO | news_scraper | successfully parsed 20 for AAPL
+2026-04-09 16:16:14 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-04-09 16:16:14 | INFO | news_scraper | waiting 2s before next request..
+2026-04-09 16:16:16 | INFO | news_scraper | ── Processing GOOGL ──
+2026-04-09 16:16:16 | INFO | news_scraper | Fetching RSS feed for GOOGL — https://feeds.finance.yahoo.com/rss/2.0/headline?s=GOOGL&region=US&lang=en-US
+2026-04-09 16:16:16 | INFO | news_scraper | RSS feed fetched successfully for GOOGL
+2026-04-09 16:16:16 | INFO | news_scraper | found 20 articles for GOOGL
+2026-04-09 16:16:16 | INFO | news_scraper | successfully parsed 20 for GOOGL
+2026-04-09 16:16:16 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-04-09 16:16:16 | INFO | news_scraper | waiting 2s before next request..
+2026-04-09 16:16:18 | INFO | news_scraper | ── Processing MSFT ──
+2026-04-09 16:16:18 | INFO | news_scraper | Fetching RSS feed for MSFT — https://feeds.finance.yahoo.com/rss/2.0/headline?s=MSFT&region=US&lang=en-US
+2026-04-09 16:16:19 | INFO | news_scraper | RSS feed fetched successfully for MSFT
+2026-04-09 16:16:19 | INFO | news_scraper | found 20 articles for MSFT
+2026-04-09 16:16:19 | INFO | news_scraper | successfully parsed 20 for MSFT
+2026-04-09 16:16:19 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-04-09 16:16:19 | INFO | news_scraper | waiting 2s before next request..
+2026-04-09 16:16:21 | INFO | news_scraper | ── Processing TSLA ──
+2026-04-09 16:16:21 | INFO | news_scraper | Fetching RSS feed for TSLA — https://feeds.finance.yahoo.com/rss/2.0/headline?s=TSLA&region=US&lang=en-US
+2026-04-09 16:16:21 | INFO | news_scraper | RSS feed fetched successfully for TSLA
+2026-04-09 16:16:21 | INFO | news_scraper | found 20 articles for TSLA
+2026-04-09 16:16:21 | INFO | news_scraper | successfully parsed 20 for TSLA
+2026-04-09 16:16:21 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-04-09 16:16:21 | INFO | news_scraper | waiting 2s before next request..
+2026-04-09 16:16:23 | INFO | news_scraper | ── Processing AMZN ──
+2026-04-09 16:16:23 | INFO | news_scraper | Fetching RSS feed for AMZN — https://feeds.finance.yahoo.com/rss/2.0/headline?s=AMZN&region=US&lang=en-US
+2026-04-09 16:16:24 | INFO | news_scraper | RSS feed fetched successfully for AMZN
+2026-04-09 16:16:24 | INFO | news_scraper | found 20 articles for AMZN
+2026-04-09 16:16:24 | INFO | news_scraper | successfully parsed 20 for AMZN
+2026-04-09 16:16:24 | INFO | news_scraper | saved 20 articles to c:\Users\Hp\market-sentiment-analysis\data/raw/news/ SUCCESSFULLY
+2026-04-09 16:16:24 | INFO | news_scraper | ============================================================
+2026-04-09 16:16:24 | INFO | news_scraper | COMPLETE — ALL 5 SYMBOLS SCRAPED SUCCESSFULLY
+2026-04-09 16:16:24 | INFO | news_scraper | ============================================================
+2026-04-09 16:16:41 | INFO | stock_downloader | ============================================================
+2026-04-09 16:16:41 | INFO | stock_downloader | STOCK DOWNLOADER — starting
+2026-04-09 16:16:41 | INFO | stock_downloader | ============================================================
+2026-04-09 16:16:41 | INFO | stock_downloader | starting download for AAPL
+2026-04-09 16:16:46 | WARNING | stock_downloader | AAPL returned only 1 rows , expected least were 50
+2026-04-09 16:16:46 | INFO | stock_downloader | AAPL - Saved 568 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-04-09 16:16:46 | INFO | stock_downloader | starting download for GOOGL
+2026-04-09 16:16:47 | WARNING | stock_downloader | GOOGL returned only 1 rows , expected least were 50
+2026-04-09 16:16:47 | INFO | stock_downloader | GOOGL - Saved 568 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/GOOGL_raw.csv
+2026-04-09 16:16:47 | INFO | stock_downloader | starting download for MSFT
+2026-04-09 16:16:48 | WARNING | stock_downloader | MSFT returned only 1 rows , expected least were 50
+2026-04-09 16:16:48 | INFO | stock_downloader | MSFT - Saved 568 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/MSFT_raw.csv
+2026-04-09 16:16:48 | INFO | stock_downloader | starting download for TSLA
+2026-04-09 16:16:49 | WARNING | stock_downloader | TSLA returned only 1 rows , expected least were 50
+2026-04-09 16:16:49 | INFO | stock_downloader | TSLA - Saved 568 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/TSLA_raw.csv
+2026-04-09 16:16:49 | INFO | stock_downloader | starting download for AMZN
+2026-04-09 16:16:50 | WARNING | stock_downloader | AMZN returned only 1 rows , expected least were 50
+2026-04-09 16:16:50 | INFO | stock_downloader | AMZN - Saved 568 rows to c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AMZN_raw.csv
+2026-04-09 16:16:50 | INFO | stock_downloader | ============================================================
+2026-04-09 16:16:50 | INFO | stock_downloader | COMPLETE - all 5 downloads completed successfully
+2026-04-09 16:16:50 | INFO | stock_downloader | ============================================================
+2026-04-09 16:17:00 | INFO | validator | ============================================================
+2026-04-09 16:17:00 | INFO | validator | VALIDATOR — starting
+2026-04-09 16:17:00 | INFO | validator | ============================================================
+2026-04-09 16:17:00 | INFO | validator | VALIDATING - AAPL
+2026-04-09 16:17:00 | INFO | validator | starting stock validation checks for AAPL
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for AAPL-stock : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] Column 'Symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] Column 'Date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] Column 'Close' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for stockAAPL
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] 'Open' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] 'High' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] 'Low' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] 'Close' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL]  High >= Low for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL]  vol>=0 for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AAPL] Row count: 568 | Minimum required: 50
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | ["stock"] AAPL passed all validation checks
+2026-04-09 16:17:00 | INFO | validator | starting news validation checks for AAPL
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/AAPL_news_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for AAPL-news : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [news][AAPL] Column 'title' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][AAPL] Column 'date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][AAPL] Column 'symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for newsAAPL
+2026-04-09 16:17:00 | INFO | validator | [news][AAPL] Row count: 20 | Minimum required: 20
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | SUCCESSFULL - [news] AAPL passed all checks
+2026-04-09 16:17:00 | INFO | validator | VALIDATING - GOOGL
+2026-04-09 16:17:00 | INFO | validator | starting stock validation checks for GOOGL
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/GOOGL_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for GOOGL-stock : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] Column 'Symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] Column 'Date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] Column 'Close' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for stockGOOGL
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] 'Open' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] 'High' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] 'Low' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] 'Close' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL]  High >= Low for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL]  vol>=0 for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][GOOGL] Row count: 568 | Minimum required: 50
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | ["stock"] GOOGL passed all validation checks
+2026-04-09 16:17:00 | INFO | validator | starting news validation checks for GOOGL
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/GOOGL_news_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for GOOGL-news : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [news][GOOGL] Column 'title' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][GOOGL] Column 'date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][GOOGL] Column 'symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for newsGOOGL
+2026-04-09 16:17:00 | INFO | validator | [news][GOOGL] Row count: 20 | Minimum required: 20
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | SUCCESSFULL - [news] GOOGL passed all checks
+2026-04-09 16:17:00 | INFO | validator | VALIDATING - MSFT
+2026-04-09 16:17:00 | INFO | validator | starting stock validation checks for MSFT
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/MSFT_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for MSFT-stock : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] Column 'Symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] Column 'Date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] Column 'Close' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for stockMSFT
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] 'Open' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] 'High' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] 'Low' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] 'Close' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT]  High >= Low for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT]  vol>=0 for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][MSFT] Row count: 568 | Minimum required: 50
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | ["stock"] MSFT passed all validation checks
+2026-04-09 16:17:00 | INFO | validator | starting news validation checks for MSFT
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/MSFT_news_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for MSFT-news : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [news][MSFT] Column 'title' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][MSFT] Column 'date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][MSFT] Column 'symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for newsMSFT
+2026-04-09 16:17:00 | INFO | validator | [news][MSFT] Row count: 20 | Minimum required: 20
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | SUCCESSFULL - [news] MSFT passed all checks
+2026-04-09 16:17:00 | INFO | validator | VALIDATING - TSLA
+2026-04-09 16:17:00 | INFO | validator | starting stock validation checks for TSLA
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/TSLA_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for TSLA-stock : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] Column 'Symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] Column 'Date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] Column 'Close' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for stockTSLA
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] 'Open' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] 'High' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] 'Low' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] 'Close' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA]  High >= Low for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA]  vol>=0 for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][TSLA] Row count: 568 | Minimum required: 50
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | ["stock"] TSLA passed all validation checks
+2026-04-09 16:17:00 | INFO | validator | starting news validation checks for TSLA
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/TSLA_news_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for TSLA-news : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [news][TSLA] Column 'title' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][TSLA] Column 'date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][TSLA] Column 'symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for newsTSLA
+2026-04-09 16:17:00 | INFO | validator | [news][TSLA] Row count: 20 | Minimum required: 20
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | SUCCESSFULL - [news] TSLA passed all checks
+2026-04-09 16:17:00 | INFO | validator | VALIDATING - AMZN
+2026-04-09 16:17:00 | INFO | validator | starting stock validation checks for AMZN
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AMZN_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for AMZN-stock : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] Column 'Symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] Column 'Date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] Column 'Close' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for stockAMZN
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] 'Open' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] 'High' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] 'Low' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] 'Close' all values > 0 ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN]  High >= Low for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN]  vol>=0 for all rows ✓
+2026-04-09 16:17:00 | INFO | validator | [stock][AMZN] Row count: 568 | Minimum required: 50
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | ["stock"] AMZN passed all validation checks
+2026-04-09 16:17:00 | INFO | validator | starting news validation checks for AMZN
+2026-04-09 16:17:00 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/AMZN_news_raw.csv
+2026-04-09 16:17:00 | INFO | validator | check complete for AMZN-news : ALL COLUMNS PRESENT
+2026-04-09 16:17:00 | INFO | validator | [news][AMZN] Column 'title' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][AMZN] Column 'date' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | [news][AMZN] Column 'symbol' — no nulls ✓
+2026-04-09 16:17:00 | INFO | validator | no duplicates found for newsAMZN
+2026-04-09 16:17:00 | INFO | validator | [news][AMZN] Row count: 20 | Minimum required: 20
+2026-04-09 16:17:00 | INFO | validator | row count check complete - all dates are in YYYY-mm-dd format    
+2026-04-09 16:17:00 | INFO | validator | SUCCESSFULL - [news] AMZN passed all checks
+2026-04-09 16:17:00 | INFO | validator | ============================================================
+2026-04-09 16:17:00 | INFO | validator | VALIDATION SUMMARY
+2026-04-09 16:17:00 | INFO | validator | ============================================================
+2026-04-09 16:17:00 | INFO | validator | Stock - Passed : 5 | failed : 0 
+2026-04-09 16:17:00 | INFO | validator | News - Passed : 5 | failed : 0 
+2026-04-09 16:17:00 | INFO | validator | ALL FILES PASSED CHECKS
+2026-04-09 16:17:07 | INFO | cleaner | ============================================================
+2026-04-09 16:17:07 | INFO | cleaner | CLEANER — starting
+2026-04-09 16:17:07 | INFO | cleaner | ============================================================
+2026-04-09 16:17:07 | INFO | cleaner | cleaning - AAPL
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AAPL_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [Stock][AAPL has 568 rows — now cleaning
+2026-04-09 16:17:07 | INFO | cleaner | [stock] AAPL no duplicate rows found
+2026-04-09 16:17:07 | INFO | cleaner | [stock] AAPL no rows with NULL value found
+2026-04-09 16:17:07 | WARNING | cleaner | [stock][AAPL] Found 19 rows with invalid price data — removing
+2026-04-09 16:17:07 | INFO | cleaner | [stock][AAPL] Cleaning complete — 568 → 549 rows (19 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | saved 549 rows → data/processed/stock/AAPL_stock_processed.csv
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/AAPL_news_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [news][AAPL] Starting cleaning — 20 rows
+2026-04-09 16:17:07 | INFO | cleaner | [AAPL] Relevance filter passed — all 20 articles appear relevant.
+2026-04-09 16:17:07 | INFO | cleaner | [news][AAPL] Cleaning complete — 20 → 12 rows (8 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | appended and deduped → data/processed/news/AAPL_news_processed.csv
+2026-04-09 16:17:07 | INFO | cleaner | cleaning - GOOGL
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/GOOGL_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [Stock][GOOGL has 568 rows — now cleaning
+2026-04-09 16:17:07 | INFO | cleaner | [stock] GOOGL no duplicate rows found
+2026-04-09 16:17:07 | INFO | cleaner | [stock] GOOGL no rows with NULL value found
+2026-04-09 16:17:07 | WARNING | cleaner | [stock][GOOGL] Found 12 rows with invalid price data — removing
+2026-04-09 16:17:07 | INFO | cleaner | [stock][GOOGL] Cleaning complete — 568 → 556 rows (12 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | saved 556 rows → data/processed/stock/GOOGL_stock_processed.csv
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/GOOGL_news_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [news][GOOGL] Starting cleaning — 20 rows
+2026-04-09 16:17:07 | INFO | cleaner | [GOOGL] Relevance filter passed — all 20 articles appear relevant.
+2026-04-09 16:17:07 | INFO | cleaner | [news][GOOGL] Cleaning complete — 20 → 6 rows (14 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | appended and deduped → data/processed/news/GOOGL_news_processed.csv
+2026-04-09 16:17:07 | INFO | cleaner | cleaning - MSFT
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/MSFT_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [Stock][MSFT has 568 rows — now cleaning
+2026-04-09 16:17:07 | INFO | cleaner | [stock] MSFT no duplicate rows found
+2026-04-09 16:17:07 | INFO | cleaner | [stock] MSFT no rows with NULL value found
+2026-04-09 16:17:07 | WARNING | cleaner | [stock][MSFT] Found 12 rows with invalid price data — removing
+2026-04-09 16:17:07 | INFO | cleaner | [stock][MSFT] Cleaning complete — 568 → 556 rows (12 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | saved 556 rows → data/processed/stock/MSFT_stock_processed.csv
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/MSFT_news_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [news][MSFT] Starting cleaning — 20 rows
+2026-04-09 16:17:07 | INFO | cleaner | [MSFT] Relevance filter passed — all 20 articles appear relevant.
+2026-04-09 16:17:07 | INFO | cleaner | [news][MSFT] Cleaning complete — 20 → 8 rows (12 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | appended and deduped → data/processed/news/MSFT_news_processed.csv
+2026-04-09 16:17:07 | INFO | cleaner | cleaning - TSLA
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/TSLA_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [Stock][TSLA has 568 rows — now cleaning
+2026-04-09 16:17:07 | INFO | cleaner | [stock] TSLA no duplicate rows found
+2026-04-09 16:17:07 | INFO | cleaner | [stock] TSLA no rows with NULL value found
+2026-04-09 16:17:07 | WARNING | cleaner | [stock][TSLA] Found 4 rows with invalid price data — removing
+2026-04-09 16:17:07 | INFO | cleaner | [stock][TSLA] Cleaning complete — 568 → 564 rows (4 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | saved 564 rows → data/processed/stock/TSLA_stock_processed.csv
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/TSLA_news_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [news][TSLA] Starting cleaning — 20 rows
+2026-04-09 16:17:07 | INFO | cleaner | [TSLA] Relevance filter passed — all 20 articles appear relevant.
+2026-04-09 16:17:07 | INFO | cleaner | [news][TSLA] Cleaning complete — 20 → 14 rows (6 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | appended and deduped → data/processed/news/TSLA_news_processed.csv
+2026-04-09 16:17:07 | INFO | cleaner | cleaning - AMZN
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 568 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/stock/AMZN_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [Stock][AMZN has 568 rows — now cleaning
+2026-04-09 16:17:07 | INFO | cleaner | [stock] AMZN no duplicate rows found
+2026-04-09 16:17:07 | INFO | cleaner | [stock] AMZN no rows with NULL value found
+2026-04-09 16:17:07 | WARNING | cleaner | [stock][AMZN] Found 17 rows with invalid price data — removing
+2026-04-09 16:17:07 | INFO | cleaner | [stock][AMZN] Cleaning complete — 568 → 551 rows (17 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | saved 551 rows → data/processed/stock/AMZN_stock_processed.csv
+2026-04-09 16:17:07 | INFO | utils | SUCCESSFYLLY loaded 20 rows from c:\Users\Hp\market-sentiment-analysis\data/raw/news/AMZN_news_raw.csv
+2026-04-09 16:17:07 | INFO | cleaner | [news][AMZN] Starting cleaning — 20 rows
+2026-04-09 16:17:07 | INFO | cleaner | [AMZN] Relevance filter passed — all 20 articles appear relevant.
+2026-04-09 16:17:07 | INFO | cleaner | [news][AMZN] Cleaning complete — 20 → 7 rows (13 removed total)
+2026-04-09 16:17:07 | INFO | cleaner | appended and deduped → data/processed/news/AMZN_news_processed.csv
+2026-04-09 16:17:07 | INFO | cleaner | ============================================================
+2026-04-09 16:17:07 | INFO | cleaner | CLEANING SUMMARY
+2026-04-09 16:17:07 | INFO | cleaner | ============================================================
+2026-04-09 16:17:07 | INFO | cleaner | all files cleaned successfully
+2026-04-09 16:17:07 | INFO | cleaner | ============================================================
+2026-04-09 16:17:21 | INFO | scorer | ============================================================
+2026-04-09 16:17:21 | INFO | scorer | STARTING SENTIMENT ANALYSER
+2026-04-09 16:17:21 | INFO | scorer | ============================================================
+2026-04-09 16:17:21 | INFO | scorer | VADER ANALYSER INITIALISED
+2026-04-09 16:17:21 | INFO | scorer | SCORING AAPL
+2026-04-09 16:17:21 | INFO | utils | SUCCESSFYLLY loaded 46 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/AAPL_news_processed.csv
+2026-04-09 16:17:21 | INFO | scorer | [sentiment] AAPL scoring 12 articles
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][AAPL] Using 'text' column for scoring
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][AAPL] Distribution — POSITIVE: 6 | NEGATIVE: 2 | NEUTRAL: 4
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][AAPL] Saved 12 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/AAPL_sentiment.csv
+2026-04-09 16:17:21 | INFO | scorer | SCORING GOOGL
+2026-04-09 16:17:21 | INFO | utils | SUCCESSFYLLY loaded 24 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/GOOGL_news_processed.csv
+2026-04-09 16:17:21 | INFO | scorer | [sentiment] GOOGL scoring 6 articles
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][GOOGL] Using 'text' column for scoring
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][GOOGL] Distribution — POSITIVE: 4 | NEGATIVE: 2 | NEUTRAL: 0
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][GOOGL] Saved 6 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/GOOGL_sentiment.csv
+2026-04-09 16:17:21 | INFO | scorer | SCORING MSFT
+2026-04-09 16:17:21 | INFO | utils | SUCCESSFYLLY loaded 29 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/MSFT_news_processed.csv
+2026-04-09 16:17:21 | INFO | scorer | [sentiment] MSFT scoring 8 articles
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][MSFT] Using 'text' column for scoring
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][MSFT] Distribution — POSITIVE: 2 | NEGATIVE: 2 | NEUTRAL: 4
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][MSFT] Saved 8 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/MSFT_sentiment.csv
+2026-04-09 16:17:21 | INFO | scorer | SCORING TSLA
+2026-04-09 16:17:21 | INFO | utils | SUCCESSFYLLY loaded 56 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/TSLA_news_processed.csv
+2026-04-09 16:17:21 | INFO | scorer | [sentiment] TSLA scoring 14 articles
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][TSLA] Using 'text' column for scoring
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][TSLA] Distribution — POSITIVE: 9 | NEGATIVE: 1 | NEUTRAL: 4
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][TSLA] Saved 14 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/TSLA_sentiment.csv
+2026-04-09 16:17:21 | INFO | scorer | SCORING AMZN
+2026-04-09 16:17:21 | INFO | utils | SUCCESSFYLLY loaded 26 rows from c:\Users\Hp\market-sentiment-analysis\data/processed/news/AMZN_news_processed.csv
+2026-04-09 16:17:21 | INFO | scorer | [sentiment] AMZN scoring 7 articles
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][AMZN] Using 'text' column for scoring
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][AMZN] Distribution — POSITIVE: 6 | NEGATIVE: 0 | NEUTRAL: 1
+2026-04-09 16:17:21 | INFO | scorer | [sentiment][AMZN] Saved 7 scored rows → c:\Users\Hp\market-sentiment-analysis\data/sentiment/AMZN_sentiment.csv
+2026-04-09 16:17:21 | INFO | scorer | ALL SYMBOLS SCORED SUCCESSFULLY : ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN']
+2026-04-09 16:17:21 | INFO | scorer | ============================================================
+2026-04-09 16:17:28 | INFO | loader | ============================================================
+2026-04-09 16:17:28 | INFO | loader | STARTING LOADER 
+2026-04-09 16:17:28 | INFO | loader | ============================================================
+2026-04-09 16:17:28 | INFO | loader | mysql connection established
+2026-04-09 16:17:28 | INFO | loader | STEP 1 — POPULATING DIM_DATE
+2026-04-09 16:17:28 | INFO | loader | dim_date — inserted: 1 | skipped: 829
+2026-04-09 16:17:28 | INFO | loader | DIM_SYMBOL has 830 rows
+2026-04-09 16:17:28 | INFO | loader | STEP 2 — BUILDING LOOKUP MAPS  
+2026-04-09 16:17:28 | INFO | loader | Maps ready — 5 SYMBOLS , 830 DATES
+2026-04-09 16:17:28 | INFO | loader | STEP 3 — LOADING FACT_STOCK_PRICES 
+2026-04-09 16:17:29 | INFO | loader | [loader][stock][AAPL] inserted: 1 | skipped: 548
+2026-04-09 16:17:29 | INFO | loader | [loader][stock][GOOGL] inserted: 1 | skipped: 555
+2026-04-09 16:17:29 | INFO | loader | [loader][stock][MSFT] inserted: 1 | skipped: 555
+2026-04-09 16:17:29 | INFO | loader | [loader][stock][TSLA] inserted: 1 | skipped: 563
+2026-04-09 16:17:30 | INFO | loader | [loader][stock][AMZN] inserted: 1 | skipped: 550
+2026-04-09 16:17:30 | INFO | loader | [loader][stock] TOTAL — inserted: 5 | skipped: 2771
+2026-04-09 16:17:30 | INFO | loader | STEP 3 — LOADING FACT_NEWS_ARTICLES 
+2026-04-09 16:17:30 | INFO | loader | [loader][news][AAPL] inserted: 12 | skipped: 34
+2026-04-09 16:17:30 | INFO | loader | [loader][news][GOOGL] inserted: 6 | skipped: 18
+2026-04-09 16:17:30 | INFO | loader | [loader][news][MSFT] inserted: 6 | skipped: 23
+2026-04-09 16:17:30 | INFO | loader | [loader][news][TSLA] inserted: 13 | skipped: 43
+2026-04-09 16:17:30 | INFO | loader | [loader][news][AMZN] inserted: 5 | skipped: 21
+2026-04-09 16:17:30 | INFO | loader | [loader][news] TOTAL — inserted: 42 | skipped: 139
+2026-04-09 16:17:30 | INFO | loader | ============================================================
+2026-04-09 16:17:30 | INFO | loader | LOADING SUCCESSFULL
+2026-04-09 16:17:30 | INFO | loader | ============================================================
+2026-04-09 16:17:30 | INFO | loader | MySQL CONNECTION CLOSED
