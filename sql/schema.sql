@@ -1,4 +1,4 @@
-create database if not exists market_sentiment_analysis
+	create database if not exists market_sentiment_analysis
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
@@ -7,7 +7,7 @@ use market_sentiment_analysis;
 create table if not exists DIM_SYMBOL (
 	symbol_id int not null auto_increment,
     symbol varchar(10) not null,
-    company_name varchar(50) not null,
+    company_name varchar(100) not null,
 	primary key (symbol_id),
     unique key uq_symbol(symbol)
 );
@@ -53,7 +53,7 @@ create table if not exists Fact_News_Articles(
     sentiment_label varchar(50) not null,
     
     primary key (article_id),
-    unique key uq_news(link(255)),
+    unique key uq_news(link(500)),
     
     foreign key (symbol_id) references DIM_SYMBOL(symbol_id),
     foreign key (date_id) references DIM_DATE(date_id)
@@ -80,11 +80,11 @@ create table if not exists Fact_Technical_Features(
 	feature_id int not null auto_increment,
     symbol_id int not null,
     date_id int not null,
-    ma_7 decimal(10,4) not null,
-    ma_14 decimal(10,4) not null,
-    ma_30 decimal(10,4) not null,
-    rsi_14 decimal(5,2) not null,
-    daily_return decimal(8,4) not null,
+    ma_7 decimal(10,4) null,
+    ma_14 decimal(10,4) null,
+    ma_30 decimal(10,4) null,
+    rsi_14 decimal(5,2) null,
+    daily_return decimal(8,4) null,
     price_volatility decimal(8,4) not null,
     
     primary key (feature_id),
@@ -99,9 +99,9 @@ create table if not exists Fact_Combined_Analysis(
     symbol_id int not null,
     date_id int not null,
     close decimal(10,4) not null,
-    avg_sentiment decimal(10,4) not null, 
-    rsi_14 decimal(5,2) not null, 
-    ma_7 decimal(10,4) not null,
+    avg_sentiment decimal(10,4) null, 
+    rsi_14 decimal(5,2) null, 
+    ma_7 decimal(10,4) null,
     sentiment_label varchar(50) not null,
     
     primary key (analysis_id),
@@ -111,10 +111,10 @@ create table if not exists Fact_Combined_Analysis(
     foreign key (date_id) references DIM_DATE(date_id)
 );
 
-insert ignore into DIM_SYMBOL(symbol,company_name) values(
+insert ignore into DIM_SYMBOL(symbol,company_name) values
 	("AAPL","Apple Inc."),
     ("GOOGL","Google Inc."),
     ("MSFT","Microsoft Corporation"),
     ("TSLA","Tesla Inc."),
     ("AMZN","Amazon.com Inc.")
-);
+;

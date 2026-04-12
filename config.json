@@ -41,8 +41,8 @@
 
   "sentiment": {
     "engine":           "vader",
-    "positive_threshold": 0.05,
-    "negative_threshold": -0.05
+    "positive_threshold": 0.30,
+    "negative_threshold": -0.30
   },
 
   "logging": {
