@@ -183,7 +183,9 @@ def load_news_articles(conn,config,base_dir,date_map,symbol_map,logger):
 
 def main():
     config,base_dir=load_config()
-    logger=logging.getLogger(__name__)
+    log_dir=config["paths"]["logs"]
+    log_filename=config["logging"]["log_filename"]
+    logger=setup_logger(__name__,log_dir,log_filename)
 
     logger.info("="*60)
     logger.info(f'STARTING LOADER ')

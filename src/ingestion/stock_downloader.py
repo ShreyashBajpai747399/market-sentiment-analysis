@@ -105,8 +105,9 @@ def save_stock_data(df,symbol,raw_stock_path,logger):
 def main():
     config,base_dir=load_config()
     log_dir=os.path.join(base_dir,config["paths"]["logs"])
+    log_file_name=config["logging"]["log_filename"]
     raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
-    logger=logging.getLogger(__name__)
+    logger=setup_logger(__name__,log_dir=log_dir,log_filename=log_file_name)
 
     logger.info("=" * 60)
     logger.info("STOCK DOWNLOADER — starting")
@@ -121,20 +122,29 @@ def main():
 
     for symbol in symbols:
         file_path=os.path.join(raw_stock_path,f"{symbol}_raw.csv")
+
+        today=pd.Timestamp.today().normalize()
+
         if os.path.exists(file_path):
             existing_df=pd.read_csv(file_path)
             last_date=pd.to_datetime(existing_df["Date"]).max()
-            start_date=(last_date+pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+            next_date=last_date + pd.Timedelta(days=1)
+            if next_date>=today:
+                logger.info(
+                    f'No new data to fetch for {symbol}'
+                )
+                continue
+            start_date=next_date.strftime("%Y-%m-%d")
         else:
             existing_df=None
             start_date=config["stocks"]["start_date"]
     
     
         df=download_stock(symbol=symbol,start_date=start_date,interval=interval,logger=logger )
-
         if df is not None:
             today=pd.Timestamp.today().normalize()
             df=df[pd.to_datetime(df["Date"])<today]
+
             if df.empty:
                 logger.info(f"No new data for {symbol}")
                 continue

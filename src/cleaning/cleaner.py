@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 import sys
-import logging
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import load_config,setup_logger,load_csv
@@ -268,12 +267,15 @@ def save_clean_data(df,symbol,output_path,file_suffix,logger,append=False):
     
 def main():
     config,base_dir=load_config()
+    log_dir=os.path.join(base_dir,config["paths"]["logs"])
+    log_filename=config["logging"]["log_filename"]
     raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
     raw_news_path=os.path.join(base_dir,config["paths"]["raw_news"])
     processed_stock_path=config["paths"]["processed_stock"]
     processed_news_path=config["paths"]["processed_news"]
     
-    logger=logging.getLogger(__name__)
+    logger=setup_logger(__name__,log_dir,log_filename)
+
     
     logger.info("=" * 60)
     logger.info("CLEANER — starting")

@@ -235,8 +235,10 @@ def main():
     config,base_dir=load_config()
     raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
     raw_news_path=os.path.join(base_dir,config["paths"]["raw_news"])
+    log_dir=os.path.join(base_dir,config["paths"]["logs"])
+    log_filename=config["logging"]["log_filename"]
     
-    logger=logging.getLogger(__name__)
+    logger=setup_logger(__name__,log_dir,log_filename)
 
     symbols=config["stocks"]["symbols"]
 
