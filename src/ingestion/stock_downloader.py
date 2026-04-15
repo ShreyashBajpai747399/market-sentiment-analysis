@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import sys
 from datetime import datetime
+import logging
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import load_config, setup_logger
@@ -105,7 +106,7 @@ def main():
     config,base_dir=load_config()
     log_dir=os.path.join(base_dir,config["paths"]["logs"])
     raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
-    logger=setup_logger(__name__,log_dir,config["logging"]["log_filename"])
+    logger=logging.getLogger(__name__)
 
     logger.info("=" * 60)
     logger.info("STOCK DOWNLOADER — starting")

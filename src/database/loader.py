@@ -2,6 +2,7 @@ import os
 import sys
 import mysql.connector
 import pandas as pd
+import logging
 from datetime import datetime , timedelta
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -182,9 +183,7 @@ def load_news_articles(conn,config,base_dir,date_map,symbol_map,logger):
 
 def main():
     config,base_dir=load_config()
-    log_dir=config["paths"]["logs"]
-    log_filename=config["logging"]["log_filename"]
-    logger=setup_logger(__name__,log_dir,log_filename)
+    logger=logging.getLogger(__name__)
 
     logger.info("="*60)
     logger.info(f'STARTING LOADER ')

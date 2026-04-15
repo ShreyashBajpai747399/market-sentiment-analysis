@@ -5,6 +5,7 @@ import os
 import sys
 import time
 import csv
+import logging
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import load_config, setup_logger
@@ -169,11 +170,9 @@ def save_news_data(articles,raw_news_path,symbol,logger):
 
 def main():
     config,base_dir=load_config()
-    log_dir=os.path.join(base_dir,config["paths"]["logs"])
-    log_file_name=config["logging"]["log_filename"]
     raw_news_path=os.path.join(base_dir,config["paths"]["raw_news"])
 
-    logger=setup_logger(__name__,log_dir=log_dir,log_filename=log_file_name)
+    logger=logging.getLogger(__name__)
 
     logger.info("="*60)
     logger.info(f'NEWS SCRAPER - STARTING')

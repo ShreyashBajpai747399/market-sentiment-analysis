@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import sys
+import logging
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
 from utils import load_config,setup_logger,load_csv
@@ -234,9 +235,8 @@ def main():
     config,base_dir=load_config()
     raw_stock_path=os.path.join(base_dir,config["paths"]["raw_stock"])
     raw_news_path=os.path.join(base_dir,config["paths"]["raw_news"])
-    log_dir=os.path.join(base_dir,config['paths']["logs"])
     
-    logger=setup_logger(__name__,log_dir,config["logging"]["log_filename"])
+    logger=logging.getLogger(__name__)
 
     symbols=config["stocks"]["symbols"]
 
