@@ -56,7 +56,7 @@ def check_duplicates(df,subset_cols,symbol,data_type,logger):
     duplicate_count=df.duplicated(subset=existing_cols).sum()
 
     if duplicate_count>0:
-        logger.error(
+        logger.warning(
             f'{duplicate_count} duplicates found for {data_type}{symbol}'
         )
         return False
