@@ -1,0 +1,21 @@
+2026-04-16 01:34:59 | INFO | main | ============================================================
+2026-04-16 01:34:59 | INFO | main | PIPELINE STARTED
+2026-04-16 01:34:59 | INFO | main | ============================================================
+2026-04-16 01:34:59 | INFO | main | STARTING : Stock Data Downloader
+2026-04-16 01:35:00 | INFO | main | COMPLETED : Stock Data Downloader
+2026-04-16 01:35:00 | INFO | main | STARTING : News Articles Downloader
+2026-04-16 01:35:11 | INFO | main | COMPLETED : News Articles Downloader
+2026-04-16 01:35:11 | INFO | main | STARTING : Data Validation
+2026-04-16 01:35:12 | INFO | main | COMPLETED : Data Validation
+2026-04-16 01:35:12 | INFO | main | STARTING : Data Cleaning
+2026-04-16 01:35:13 | INFO | main | COMPLETED : Data Cleaning
+2026-04-16 01:35:13 | INFO | main | STARTING : Sentiment Scoring
+2026-04-16 01:35:13 | INFO | main | COMPLETED : Sentiment Scoring
+2026-04-16 01:35:13 | INFO | main | STARTING : Load to MySQL
+2026-04-16 01:35:15 | INFO | main | COMPLETED : Load to MySQL
+2026-04-16 01:35:15 | INFO | main | ============================================================
+2026-04-16 01:35:15 | INFO | main | PYTHON PIPELINE COMPLETED
+2026-04-16 01:35:15 | INFO | main | ============================================================
+2026-04-16 01:35:15 | INFO | main | STARTING : Populate Derived Tables
+2026-04-16 01:35:15 | ERROR | main | FAILED : Populate Derived Tables
+2026-04-16 01:35:15 | ERROR | main | ERROR : Command 'mysql -u root -p"826643" -h localhost -P 3306 market_sentiment_analysis < "c:\Users\Hp\market-sentiment-analysis\sql/populate_derived.sql"' returned non-zero exit status 1.

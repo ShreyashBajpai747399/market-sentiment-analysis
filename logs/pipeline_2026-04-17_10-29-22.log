@@ -1,0 +1,6 @@
+2026-04-17 10:29:22 | INFO | main | ============================================================
+2026-04-17 10:29:22 | INFO | main | PIPELINE STARTED
+2026-04-17 10:29:22 | INFO | main | ============================================================
+2026-04-17 10:29:22 | INFO | main | STARTING : Stock Data Downloader
+2026-04-17 10:29:23 | INFO | main | COMPLETED : Stock Data Downloader
+2026-04-17 10:29:23 | INFO | main | STARTING : News Articles Downloader

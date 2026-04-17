@@ -41,7 +41,7 @@ def run_sql_step(step_name,sql_file,config,logger):
         sys.exit(1)
 
 def main():
-    config,base_dir=load_config()
+    config,base_dir=load_config()   
     ensure_dirs(base_dir,config["paths"])
 
     log_dir=os.path.join(base_dir,config["paths"]["logs"])
