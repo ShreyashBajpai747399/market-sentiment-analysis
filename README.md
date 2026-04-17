@@ -94,17 +94,20 @@ Install dependencies:
 pip install -r requirements.txt
 Run the pipeline:
 python main.py
-📊 Output
+
+Output
 Cleaned stock datasets
 Sentiment scores for news
 Merged dataset (stock + sentiment)
 Power BI dashboard for visualization
-⚠️ Limitations (Version 1)
+
+Limitations (Version 1)
 No retry logic for failed steps
 No orchestration (manual execution)
 Basic error handling
 Limited scalability
-🔄 Future Improvements (Version 2)
+
+Future Improvements (Version 2)
 Add retry logic and fault tolerance
 Introduce pipeline orchestration (e.g., scheduling)
 Improve modular architecture
