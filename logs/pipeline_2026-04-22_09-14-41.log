@@ -1,0 +1,25 @@
+2026-04-22 09:14:41 | INFO | main | ============================================================
+2026-04-22 09:14:41 | INFO | main | PIPELINE STARTED
+2026-04-22 09:14:41 | INFO | main | ============================================================
+2026-04-22 09:14:41 | INFO | main | STARTING : Stock Data Downloader
+2026-04-22 09:14:52 | INFO | main | COMPLETED : Stock Data Downloader
+2026-04-22 09:14:52 | INFO | main | STARTING : News Articles Downloader
+2026-04-22 09:15:05 | INFO | main | COMPLETED : News Articles Downloader
+2026-04-22 09:15:05 | INFO | main | STARTING : Data Validation
+2026-04-22 09:15:06 | INFO | main | COMPLETED : Data Validation
+2026-04-22 09:15:06 | INFO | main | STARTING : Data Cleaning
+2026-04-22 09:15:07 | INFO | main | COMPLETED : Data Cleaning
+2026-04-22 09:15:07 | INFO | main | STARTING : Sentiment Scoring
+2026-04-22 09:15:08 | INFO | main | COMPLETED : Sentiment Scoring
+2026-04-22 09:15:08 | INFO | main | STARTING : Load to MySQL
+2026-04-22 09:15:11 | INFO | main | COMPLETED : Load to MySQL
+2026-04-22 09:15:11 | INFO | main | ============================================================
+2026-04-22 09:15:11 | INFO | main | PYTHON PIPELINE COMPLETED
+2026-04-22 09:15:11 | INFO | main | ============================================================
+2026-04-22 09:15:11 | INFO | main | STARTING : Populate Derived Tables
+2026-04-22 09:15:12 | INFO | main | COMPLETED : Populate Derived Tables
+2026-04-22 09:15:12 | INFO | main | STARTING : Create SQL Views
+2026-04-22 09:15:12 | INFO | main | COMPLETED : Create SQL Views
+2026-04-22 09:15:12 | INFO | main | ============================================================
+2026-04-22 09:15:12 | INFO | main | SQL PIPELINE COMPLETED
+2026-04-22 09:15:12 | INFO | main | ============================================================
