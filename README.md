@@ -188,6 +188,6 @@ Each run produces:
 ## 🤝 Connect
 
 **Shreyash Bajpai**
-- 📧 [your email here]
-- 💼 [LinkedIn URL here]
+- 📧 [Gmail](shreyashbajpai0@gmail.com)
+- 💼 [LinkedIn](www.linkedin.com/in/shreyashbajpaiii)
 - 🐙 [GitHub Profile](https://github.com/ShreyashBajpai747399)
